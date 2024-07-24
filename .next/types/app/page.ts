@@ -1,4 +1,4 @@
-// File: /Users/yuxinzhang/CS/YuxinZhang214.github.io/app/page.tsx
+// File: /Users/yuxinzhang/Github/YuxinZhang214.github.io/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

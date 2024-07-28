@@ -13,11 +13,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gray-100 flex flex-col">
-        <Header />
-        <main className="flex-grow container mx-auto p-4">
+      
+      <head>
+        <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+      </head>
+
+      <body className="min-h-screen bg-gray-100 flex flex-col font-satoshi">
+
+        {/* Header */}
+        <div id='header' className='px-24 py-8'>
+          <Header />
+        </div>
+
+        {/* Content */}
+        <main className="flex-grow container px-24">
           {children}
         </main>
+
       </body>
     </html>
   );

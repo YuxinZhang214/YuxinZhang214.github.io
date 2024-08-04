@@ -10,15 +10,15 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = ({ title, description, imageUrl, detailsPageUrl }) => {
   return (
-    <div className="flex flex-row space-x-6">
+    <div className="flex flex-row space-x-8">
 
-      <div id='project-image' className="w-1/2 p-4">
-        <div className="w-full h-full overflow-hidden rounded-lg">
+      <div id='project-image' className="w-1/2">
+        <div className="overflow-hidden rounded-lg">
           <img src={imageUrl} alt={title} className="" />
         </div>
       </div>
       
-      <div id='project-text' className="w-1/2 flex flex-col m-4">
+      <div id='project-text' className="w-1/2 flex flex-col">
 
         <div id='project-title'>
           <h3 className="font-satoshi-medium text-2xl mb-8">{title}</h3>

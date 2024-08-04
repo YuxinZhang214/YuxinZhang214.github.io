@@ -16,6 +16,7 @@ export default function RootLayout({
       
       <head>
         <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+        <link rel="stylesheet" href="dist/output.css"/>
       </head>
 
       <body className="min-h-screen bg-gray-100 flex flex-col font-satoshi">

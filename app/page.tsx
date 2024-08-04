@@ -46,19 +46,27 @@ export default function Home() {
       {/* -- Project Section -- */}
       <div id="projects-section" className="pb-32">
             <h2 className="font-satoshi-bold text-4xl mb-8">My Projects</h2>
-            <div className="flex flex-col">
+
+            <div className="flex flex-col space-y-8">
+
               <Project 
                   title="Wiki Loves Monument UK" 
-                  description="Brief description of Project 1. Highlight key features, technologies used, and your role."
+                  description="Developed a comprehensive full-stack data visualisation application 
+                              from end-to-end, highlighting individual contributions to the Wiki Loves 
+                              Monuments UK competition. Utilised the d3.js library to create interactive 
+                              charts and maps, showcasing the extensive dataset containing more than 
+                              300,000 items across the competition’s 12-year history. "
                   imageUrl="/images/wlm-uk.png"
                   detailsPageUrl="/projects/project1"
               />
+
               <Project 
                   title="Visualising Music Trend" 
                   description="Brief description of Project 2. Highlight key features, technologies used, and your role."
                   imageUrl="/images/music-trend.png"
                   detailsPageUrl="/projects/project1"
               />
+
             </div>
         </div>
      

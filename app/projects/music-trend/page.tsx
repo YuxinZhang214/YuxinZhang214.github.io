@@ -3,18 +3,23 @@ import ProjectDetail from '../detail';
 const ProjectPage = () => {
 
   const project = {
-      title: 'Visualising Music Trend',
-      description: 'Data Visualisation for Wiki Loves Monument UK',
-      url:'https://wiki-loves-monument-uk-visualisation.vercel.app/',
+      title: 'Visualizing the Music Trend',
+      description: 'D3.js application for analyzing global music trends',
+      url:'https://yuxinzhang214.github.io/Visualising-Music-Trend/',
       coverImage: '/images/music-trend.png',
-      overview: 'Developed a comprehensive full-stack data visualisation application from end-to-end, highlighting individual contributions to the Wiki Loves Monuments UK competition. Utilised the d3.js library to create interactive charts and maps, showcasing the extensive dataset containing more than 300,000 items across the competition’s 12-year history. ',
-      myRole: 'I assumed full ownership of the project, managing every phase from initial data collection to backend development, and ultimately, creating a compelling frontend experience. My responsibilities encompassed gathering and processing data, as well as designing and implementing data visualisation and storytelling features that brought the dataset to life.',
-      techStack: 'Leveraged Next.js for front-end development, d3.js for dynamic data visualisation, Django(python) as the web framework for backend operations, and SQLite for database management. Next.js uses both React and Node.js to offer a comprehensive framework that simplifies the development of fast, scalable, and SEO-friendly web applications and React is web development framework leverages JavaScript for building dynamic client-side UIs',
-      impact: 'The application is expected to significantly boost participation in the competition, enhance public knowledge of the Wiki Loves Monuments project, and raise awareness of UK monuments. By making these contributions visible and engaging, the project aims to foster a deeper connection between the community and uK\'s cultural heritage',
+      overview: `My friend and I developed a D3.js music visualization application using the "Spotify Tracks Chart Dataset (2014-2023)" from Kaggle, which contains around 110,000 entries. The dataset includes categorical variables like track name, release date, and artists, as well as numerical data such as rankings and streams.`,
+      myRole: `I was responsible for building the project structure in HTML and Tailwind CSS, implementing the page layout, and creating all the charts using D3.js. My teammate added additional features, like linking to Wiki pages and refining the bubble chart.`,
+      techStack: `The application was developed using HTML, Tailwind CSS, and module JavaScript within one week. D3.js was used for all data visualizations.`,
+      impact: `Our application visually analyzes key music trends, addressing questions like:
+        1. Which artists and tracks consistently rank in the top ten?
+        2. How has music streaming evolved, and are there specific trends or seasonal patterns?
+        3. What are the most popular genres, and is there a correlation between genre popularity and the number of artists?
+      
+      This interactive tool helps users explore and understand global music trends over nearly a decade.`,
       images: [
-        { src: '/images/wiki-gallery1.jpg' },
-        { src: '/images/wiki-gallery2.jpg' },
-        { src: '/images/wiki-gallery3.jpg' },
+        { src: '/images/music-trend/image-1.png' },
+        { src: '/images/music-trend/image-2.png' },
+        { src: '/images/music-trend/image-3.png' },
       ],
   };
 

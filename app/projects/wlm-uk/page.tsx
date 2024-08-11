@@ -4,7 +4,7 @@ const ProjectPage = () => {
 
   const project = {
       title: 'Wiki Loves Monuments UK',
-      description: 'Data Visualisation for Wiki Loves Monument UK, the world\'s largest photo competition',
+      description: 'Data Visualisation Platform for Wiki Loves Monument UK, the world\'s largest photo competition',
       url:'https://wiki-loves-monument-uk-visualisation.vercel.app/',
       coverImage: '/images/wlm-uk.png',
       overview: 'Developed a comprehensive full-stack data visualisation application from end-to-end, highlighting individual contributions to the Wiki Loves Monuments UK competition. Utilised the d3.js library to create interactive charts and maps, showcasing the extensive dataset containing more than 300,000 items across the competition’s 12-year history. ',

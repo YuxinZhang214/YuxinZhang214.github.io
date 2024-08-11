@@ -5,6 +5,16 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/projects/music-trend/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/projects/music-trend/page.js"
+    ],
+    "/projects/wlm-uk/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/projects/wlm-uk/page.js"
+    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

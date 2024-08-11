@@ -2,7 +2,7 @@
 const nextConfig = {
     // For GitHub Pages' routing
     trailingSlash: true,
-    output: 'export',
+    // output: 'export',
 }
 
 module.exports = nextConfig

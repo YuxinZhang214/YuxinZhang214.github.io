@@ -1,3 +1,5 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/projects/wlm-uk/page": "app/projects/wlm-uk/page.js",
+  "/projects/music-trend/page": "app/projects/music-trend/page.js"
 }

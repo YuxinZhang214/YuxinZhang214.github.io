@@ -9,10 +9,10 @@ const Header = () => {
         </div>
 
         <div className="text-2xl">
-          <button className="p-4 rounded-full text-black
-                       hover:bg-black hover:text-white transition-colors duration-300 ">
+          <a href="mailto:yuxin.zhang.project@outlook.com" className="inline-block p-4 rounded-full text-black
+                       hover:bg-black hover:text-white transition-colors duration-300">
             Contact
-          </button>
+          </a>
         </div>
 
       </div>

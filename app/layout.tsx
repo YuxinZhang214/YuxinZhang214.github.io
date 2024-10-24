@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import Footer from './layout/Footer';
 import Header from './layout/Header';
 
 export const metadata = {
@@ -29,6 +30,10 @@ export default function RootLayout({
         <main className="flex-grow container px-24">
           {children}
         </main>
+
+        <div id='footer' className='px-24 py-8'>
+          <Footer />
+        </div>
 
       </body>
     </html>

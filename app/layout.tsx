@@ -3,8 +3,8 @@ import Footer from './layout/Footer';
 import Header from './layout/Header';
 
 export const metadata = {
-  title: 'My Website',
-  description: 'Yuxin Zhang\'s personal website',
+  title: 'Yuxin Zhang',
+  description: 'Yuxin Zhang\'s website',
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
         </div>
 
         {/* Content */}
-        <main className="flex-grow container px-24">
+        <main className="flex-grow container px-24 w-full">
           {children}
         </main>
 

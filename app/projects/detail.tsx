@@ -37,7 +37,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ title,description,url,cov
             <p className="text-xl">
               {description}
             </p>
-            <Link href={url} passHref className="px-4 py-2 rounded-full text-black
+            <Link href={url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-full text-black
                        hover:bg-black hover:text-white transition-colors duration-300">
               View Project <span className="ml-1">↗</span>
             </Link>

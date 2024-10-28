@@ -2,6 +2,7 @@ import Project from './projects/project';
 import Skills from './skill';
 import Services from './service';
 import Experience from './experience';
+import Projects from './projects/project';
 
 export default function Home() {
   return (
@@ -48,29 +49,9 @@ export default function Home() {
         
       {/* -- Project Section -- */}
       <div id="projects-section" className="pb-32 space-y-8">
-
-          <h2 className="font-satoshi-bold text-4xl mb-8">My Projects</h2>
-
-          <Project 
-              title="Wiki Loves Monument UK" 
-              description="Developed a comprehensive full-stack data visualisation application 
-                          from end-to-end, highlighting individual contributions to the Wiki Loves 
-                          Monuments UK competition. Utilised the d3.js library to create interactive 
-                          charts and maps, showcasing the extensive dataset containing more than 
-                          300,000 items across the competition’s 12-year history. "
-              imageUrl="/images/wlm-uk.png"
-              detailsPageUrl="/projects/wlm-uk"
-          />
-
-          <Project 
-              title="Visualising Music Trend" 
-              description="Collaborated with my friend to develop a D3.js application using the Spotify Tracks Chart Dataset (2014-2023) from Kaggle, containing around 110,000 entries to analyze global music trends"
-              imageUrl="/images/music-trend.png"
-              detailsPageUrl="/projects/music-trend"
-          />
-
-
-        </div>
+        <h2 className="font-satoshi-bold text-4xl mb-8">My Projects</h2>
+        <Projects />
+      </div>
      
     </div>
   );

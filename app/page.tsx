@@ -23,8 +23,7 @@ export default function Home() {
           <p className="">
             I'm Yuxin Zhang, a Frontend-Development, Research Engineer and a Frontend Software Engineer. 
             I help organization develop AI-driven platform for better decision making. I also develop 
-            internal digitalisation tool to increase the productivity for the entire organisation. As a 
-            hobby, I'm very interested in developing personal tools for increasing personal productivity
+            internal digitalisation tool to increase the productivity for the entire organisation.
           </p>
         </div>
       </div>

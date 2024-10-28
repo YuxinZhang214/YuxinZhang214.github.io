@@ -36,26 +36,26 @@ const Experience: React.FC = () => {
     {
       company: "Saint-Gobain Research (Shanghai)",
       role: "Frontend-development, Research Engineer",
-      period: "Aug 2022 - Present",
+      period: "July 20224 - Present",
       description: "Developing AI-driven platforms and internal digitalization tools to increase organizational productivity.",
       logo: "/experience/saint-gobain.png",
-      recognition: "Fortune 250"
+      recognition: "Top in Building Materials, Fortune 500"
     },
     {
       company: "Saint-Gobain",
       role: "Frontend Development Intern",
-      period: "May 2022 - Aug 2022",
+      period: "Apr 2024 - June 2024",
       description: "Worked on frontend development projects, improving user interfaces and experiences.",
       logo: "/experience/saint-gobain.png",
-      recognition: "Fortune 250"
+      recognition: "Top in Building Materials, Fortune 500"
     },
     {
       company: "School of Computer Science, University of St Andrews",
       role: "Research Intern",
-      period: "May 2021 - Aug 2021",
+      period: "June 2023 - Jun 2024",
       description: "Conducted research on computer science topics and contributed to academic projects.",
       logo: "/experience/st-andrews.jpeg",
-      recognition: "Good Times UK No.1"
+      recognition: "UK’s Top University"
     },
     // Add more experiences as needed
   ];

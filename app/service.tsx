@@ -23,17 +23,17 @@ const Services = () => {
         <div className="flex flex-col md:flex-row justify-between gap-6">
         <ServiceCard
             title="Data Visualisation"
-            description="Creating responsive and interactive user interfaces using modern web technologies."
+            description="Building custom data visualizations tailored to specific business needs"
             icon="/service/info-vis.png"
           />
           <ServiceCard
             title="Frontend Development"
-            description="Creating responsive and interactive user interfaces using modern web technologies."
+            description="Creating responsive and interactive user interfaces using modern web technologies or low-code platforms"
             icon="/service/frontend-dev.png"
           />
           <ServiceCard
             title="Full Stack Development"
-            description="End-to-end development of web applications, from database to user interface."
+            description="End-to-end development of web applications, from database to user interface"
             icon="/service/digital.png"
           />
         </div>

@@ -10,7 +10,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
   return (
     <div className="bg-white rounded-lg p-6 flex flex-col items-center w-full md:w-1/3">
       <div className="mb-4">
-        <Image src={icon} alt={title} width={84} height={84} />
+        <Image 
+          src={icon} 
+          alt={title} 
+          width={84} 
+          height={84}
+          className="object-contain"
+        />
       </div>
       <h3 className="text-xl font-semibold mb-2 text-center">{title}</h3>
       <p className="text-gray-600 text-center">{description}</p>

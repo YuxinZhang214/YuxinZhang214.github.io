@@ -1,8 +1,8 @@
-import Project from './projects/project';
 import Skills from './skill';
 import Services from './service';
 import Experience from './experience';
 import Projects from './projects/project';
+import Action from './layout/Action';
 
 export default function Home() {
   return (
@@ -51,6 +51,10 @@ export default function Home() {
       <div id="projects-section" className="pb-32 space-y-8">
         <h2 className="font-satoshi-bold text-4xl mb-8">My Projects</h2>
         <Projects />
+      </div>
+
+      <div id="projects-section" className="pb-12 space-y-8">
+        <Action/>
       </div>
      
     </div>

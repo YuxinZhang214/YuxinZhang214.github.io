@@ -9,9 +9,9 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       
@@ -27,7 +27,7 @@ export default function RootLayout({
         </div>
 
         {/* Content */}
-        <main className="flex-grow container px-24 w-full">
+        <main className="flex-grow px-24 w-full">
           {children}
         </main>
 

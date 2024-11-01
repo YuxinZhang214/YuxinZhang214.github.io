@@ -23,15 +23,17 @@ const Action = () => {
                     <FontAwesomeIcon icon={faLinkedin} className="w-10 h-10 text-gray-800" />
                 </a>
             </div>
-            <h2 className="text-6xl font-satoshi-regular text-gray-800 mb-16">
+            <h2 className="text-center text-6xl font-satoshi-regular text-gray-800 mb-16">
                 Looking for a Frontend Engineer?
             </h2>
-            <a
-                href="mailto:yuxin.zhang.project@outlook.com"
-                className="inline-block px-6 py-2 text-gray-800 border-2 border-gray-800 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white"
-            >
-                Get in Touch
-            </a>
+            <div className="flex justify-center">
+                <a
+                    href="mailto:yuxin.zhang.project@outlook.com"
+                    className="inline-block px-6 py-2 text-gray-800 border-2 border-gray-800 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white"
+                >
+                    Get in Touch
+                </a>
+            </div>
         </div>
     );
 };

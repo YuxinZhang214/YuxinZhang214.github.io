@@ -52,6 +52,10 @@ export default function Home() {
         <h2 className="font-satoshi-bold text-4xl mb-8">My Projects</h2>
         <Projects />
       </div>
+
+      <div id="projects-section" className="pb-12 space-y-8">
+        <Action/>
+      </div>
      
     </div>
   );

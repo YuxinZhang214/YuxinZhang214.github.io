@@ -19,7 +19,4 @@ out/
 .DS_Store
 Thumbs.db
 
-# Next.js build and export output
-.next/
-
 .idea/

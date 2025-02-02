@@ -11,20 +11,24 @@ export default function Home() {
       <div id="hero-section" className="pb-32">
         <div id="title" className="font-satoshi-medium text-8xl mt-16 pt-16">
           <h1 className="mb-4 flex items-center">
-            Research Engineer,
+            Front-end Engineer
           </h1>
 
-          <h1 className="mb-4 flex items-center">
-              Front-end Engineer 
-          </h1>
+          {/* <h1 className="mb-4 flex items-center">
+            Full-stack Engineer 
+          </h1> */}
     
         </div>
 
-        <div id="description" className="pt-8 w-1/2 text-lg">
-          <p className="">
-            I'm Yuxin Zhang, a Frontend-Development, Research Engineer and a Frontend Software Engineer. 
-            I help organization develop AI-driven platform for better decision making. I also develop 
-            internal digitalisation tool to increase the productivity for the entire organisation.
+        <div id="description" className="pt-4 sm:pt-6 lg:pt-8 w-full md:w-2/3 lg:w-1/2 text-base sm:text-lg">
+          <p className="mb-4 sm:mb-6">
+            I'm <b> Yuxin Zhang </b>, a Frontend Engineer and a Full-stack Software Engineer based in China with six month of industry experience, 
+            specializing in data visualization and low-code platform development. 
+          </p>
+          
+          <p>
+          I love using frontend technologies to solve real-world problems. I've worked on AI-powered platforms and internal digital tools that streamline decision-making and boost 
+            productivity. My main interests lie in building intuitive, high-performance data visualization tools and low-code platforms that drive digital transformation.
           </p>
         </div>
       </div>

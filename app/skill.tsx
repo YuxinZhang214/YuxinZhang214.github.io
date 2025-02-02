@@ -43,7 +43,7 @@ const Skills: React.FC = () => {
         </div>
 
         {/* Database and other Technologies */}
-        <div className="flex justify-center gap-12">
+        <div className="flex flex-wrap justify-center gap-12">
 
           <SkillIcon src="/skills/MS-SQL.png" alt="MS SQL" name="MS SQL" />
           <SkillIcon src="/skills/sqlite.jpeg" alt="Sqlite" name="Sqlite" />

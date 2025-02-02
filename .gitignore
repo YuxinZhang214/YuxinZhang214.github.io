@@ -21,6 +21,5 @@ Thumbs.db
 
 # Next.js build and export output
 .next/
-out/
 
 .idea/

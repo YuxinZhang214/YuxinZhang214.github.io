@@ -22,16 +22,16 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col font-satoshi">
 
         {/* Header */}
-        <div id='header' className='px-24 py-8'>
+        <div id='header' className='px-6 sm:px-12 md:px-16 lg:px-24 py-4 sm:py-6 lg:py-8'>
           <Header />
         </div>
 
         {/* Content */}
-        <main className="flex-grow px-24 w-full">
+        <main className="flex-grow px-6 sm:px-12 md:px-16 lg:px-24 w-full">
           {children}
         </main>
 
-        <div id='footer' className='px-24 py-8'>
+        <div id='footer' className='px-6 sm:px-12 md:px-16 lg:px-24 py-4 sm:py-6 lg:py-8'>
           <Footer />
         </div>
 

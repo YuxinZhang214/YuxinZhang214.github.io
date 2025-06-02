@@ -1,8 +1,8 @@
-import Skills from './skill';
-import Services from './service';
-import Experience from './experience';
-import Projects from './projects/project';
-import Action from './layout/Action';
+import Skills from './components/sections/Skills';
+import Services from './components/sections/Services';
+import Experience from './components/sections/Experience';
+import Projects from './components/sections/Projects';
+import Action from './components/Action';
 
 export default function Home() {
   return (

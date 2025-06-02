@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
         title="Wiki Loves Monument UK" 
         description="Developed a comprehensive full-stack data visualization application from end-to-end, highlighting individual contributions to the Wiki Loves Monuments UK competition. Utilized the D3.js library to create interactive charts and maps, showcasing the extensive dataset containing more than 300,000 items across the competition's 12-year history"
         imageUrl="/images/wlm-uk.png"
-        detailsPageUrl="/projects/wlm-uk"
+        detailsPageUrl="/project/wlm-uk"
         technologies={["React", "Next.js", "D3.js", "Tailwind CSS", "Django", "Wikidata", "Wikimedia Commons API", "SQLite"]}
         association="Wikimedia UK" 
       />
@@ -82,7 +82,7 @@ const Projects: React.FC = () => {
         title="Visualizing Music Trend" 
         description="Collaborated with a friend to develop a D3.js application using the Spotify Tracks Chart Dataset (2014-2023) from Kaggle, containing around 110,000 entries to analyze global music trends"
         imageUrl="/images/music-trend.png"
-        detailsPageUrl="/projects/music-trend"
+        detailsPageUrl="/project/music-trend"
         technologies={["D3.js", "JavaScript", "HTML", "CSS", 'Kaggle', 'Spotify API']}
         association="University of St Andrews" 
       />

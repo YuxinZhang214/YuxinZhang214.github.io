@@ -8,11 +8,10 @@ const Header = () => {
         
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-8 ">
-          <a href="#" className="hover:underline transition-colors">Home</a>
-          <a href="#skills-section" className="hover:underline transition-colors">Skills</a>
-          <a href="#services-section" className="hover:underline transition-colors">Services</a>
-          <a href="#experience-section" className="hover:underline transition-colors">Experience</a>
-          <a href="#projects-section" className="hover:underline transition-colors">Projects</a>
+          <a href="/" className="hover:underline transition-colors">Home</a>
+          <a href="/project" className="hover:underline transition-colors">Project</a>
+          <a href="/blog" className="hover:underline transition-colors">Blog</a>
+          <a href="/about" className="hover:underline transition-colors">About me</a>
         </div>
         
         {/* Contact Button */}

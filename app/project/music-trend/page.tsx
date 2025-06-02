@@ -1,4 +1,4 @@
-import ProjectDetail from '../detail';
+import ProjectDetail from "../sections/ui/detail";
 
 const ProjectPage = () => {
 

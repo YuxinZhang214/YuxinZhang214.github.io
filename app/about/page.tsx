@@ -1,8 +1,9 @@
-import Projects from './project/sections/Projects';
-import Action from './about/sections/Action';
-import { Button } from './components/Button';
+import Skills from './sections/Skills';
+import Services from './sections/Services';
+import Experience from './sections/Experience';
+import Action from './sections/Action';
 
-export default function Home() {
+export default function AboutMe() {
   return (
     <div className="text-left font-satoshi-regular">
       {/*  -- Hero Section -- */}
@@ -11,10 +12,6 @@ export default function Home() {
           <h1 className="mb-4 flex items-center">
             Frontend Engineer
           </h1>
-
-          {/* <h1 className="mb-4 flex items-center">
-            Full-stack Engineer 
-          </h1> */}
     
         </div>
 
@@ -31,18 +28,28 @@ export default function Home() {
         </div>
       </div>
 
-        
-      {/* -- Project Section -- */}
-      <div id="cta-buttons-section" className="pb-32 space-y-8">
-        <div className="flex justify-start">
-            <Button text='See my projects' href="/project" />
-            <Button text='See my blog posts' href="/blog" className="ml-4" />
-            <Button text='Know more about my experience' href="/blog" className="ml-4" />
-        </div>
+      {/* -- Skills Section -- */}
+      <div id="skills-section" className="pb-10">
+        <h2 className="font-satoshi-bold text-4xl mb-8">My Skills</h2>
+        <Skills />
       </div>
 
-  
-     
+      {/* -- Services Section -- */}
+      <div id="services-section" className="pb-10 w-full">
+        <h2 className="font-satoshi-bold text-4xl mb-8">My Services</h2>
+        <Services />
+      </div>
+
+      {/* -- Experience Section -- */}
+      <div id="experience-section" className="pb-12">
+        <h2 className="font-satoshi-bold text-4xl mb-8">My Experience</h2>
+        <Experience />
+      </div>
+
+      <div id="projects-section" className="py-12 space-y-8">
+        <Action/>
+      </div>
+      
     </div>
   );
 }

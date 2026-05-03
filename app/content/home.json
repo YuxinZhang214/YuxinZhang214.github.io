@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "Frontend Engineer",
+    "intro": {
+      "name": "Yuxin Zhang",
+      "text": "a Frontend Engineer and a Full-stack Software Engineer based in China with six month of industry experience, specializing in data visualization and low-code platform development."
+    },
+    "body": "I love using frontend technologies to solve real-world problems. I've worked on AI-powered platforms and internal digital tools that streamline decision-making and boost productivity. My main interests lie in building intuitive, high-performance data visualization tools and low-code platforms that drive digital transformation."
+  },
+  "cta": [
+    { "text": "See my projects", "href": "/project" },
+    { "text": "See my blog posts", "href": "/blog" },
+    { "text": "Know more about my experience", "href": "/blog" }
+  ]
+}

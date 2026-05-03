@@ -1,0 +1,21 @@
+{
+  "education": [
+    {
+      "period": "Sep 2024 — Present",
+      "current": true,
+      "school": "Imperial College London",
+      "degree": "MSc Computing (Artificial Intelligence and Machine Learning)",
+      "recognition": "UK's Top Computing Programme",
+      "desc": "Specializing in machine learning, deep learning, and applied AI. Coursework spans NLP, computer vision, reinforcement learning, and scalable ML systems.",
+      "tech": ["Python", "PyTorch", "TensorFlow", "scikit-learn", "NumPy", "Pandas"]
+    },
+    {
+      "period": "Sep 2020 — Jun 2024",
+      "school": "University of St Andrews",
+      "degree": "BSc Computer Science (First Class Honours)",
+      "recognition": "UK's Top University",
+      "desc": "Foundation in algorithms, systems, software engineering, and HCI. Final-year dissertation in data visualization for cultural heritage datasets.",
+      "tech": ["Java", "Python", "JavaScript", "Algorithms", "Software Engineering", "HCI"]
+    }
+  ]
+}

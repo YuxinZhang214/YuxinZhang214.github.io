@@ -1,0 +1,185 @@
+{
+  "posts": [
+    {
+      "slug": "low-code-component-registry",
+      "title": "Notes on building a low-code component registry",
+      "excerpt": "How we organize a registry of 60+ blocks so non-engineers can compose dashboards.",
+      "date": "Apr 24, 2026",
+      "tags": ["Low-code", "Frontend"],
+      "readingTime": "8 min",
+      "featured": true,
+      "sections": [
+        {
+          "heading": "The problem",
+          "body": "After eight months building a low-code platform at Saint-Gobain, the hardest part wasn't the drag-and-drop canvas or the rendering engine — it was keeping the component registry sane as it grew past sixty blocks. Non-engineers needed to compose dashboards without filing a ticket, but every new block added friction."
+        },
+        {
+          "heading": "What a registry actually is",
+          "body": "A registry is just a lookup table: slug → component + schema. The slug is what gets stored in the dashboard JSON. The schema tells the form renderer what fields to show. The component is what gets rendered. Keep these three things in sync and everything else falls out."
+        },
+        {
+          "heading": "How we organized it",
+          "body": "We settled on a folder-per-block convention: each block lives in /blocks/<slug>/ with index.tsx, schema.json, and a preview.png. A build script crawls that directory and generates the registry at compile time. No runtime magic, no database — just a generated TypeScript file imported by the renderer."
+        },
+        {
+          "heading": "The parts that still need a human",
+          "body": "Discoverability is the unsolved problem. Sixty blocks in a flat grid is too many to scroll. We added categories and a search, but the real fix is fewer, more composable blocks. Every time we resisted adding a new block and instead made an existing one more configurable, the platform got better."
+        }
+      ]
+    },
+    {
+      "slug": "d3-vs-other-viz-layers",
+      "title": "When D3 is too much: picking the right viz layer",
+      "excerpt": "A field guide for choosing between D3, ECharts, Plot, and a hand-rolled SVG.",
+      "date": "Mar 12, 2026",
+      "tags": ["Data-viz"],
+      "readingTime": "6 min",
+      "featured": false,
+      "sections": [
+        {
+          "heading": "The spectrum",
+          "body": "Visualization libraries sit on a spectrum from declarative to imperative. At one end: Vega-Lite, Observable Plot — you describe the chart, the library draws it. At the other: raw SVG and Canvas, where you control every pixel. D3 sits in the middle, which is why it confuses people."
+        },
+        {
+          "heading": "When to reach for D3",
+          "body": "D3 is the right choice when you need custom geometry that no chart library supports, when you're building reusable chart primitives for a design system, or when you need fine-grained control over transitions and interactions. If you're rendering a bar chart, D3 is probably too much."
+        },
+        {
+          "heading": "The alternatives worth knowing",
+          "body": "ECharts handles most dashboard charts with less code and better performance on large datasets. Observable Plot is excellent for exploratory analysis. For simple one-off charts, a hand-rolled SVG with hardcoded paths is often cleaner than pulling in a dependency. Recharts and Victory are good if you're already deep in a React component tree and need quick results."
+        },
+        {
+          "heading": "The rule",
+          "body": "Start with the most constrained tool that meets your requirements. If Observable Plot can do it, use that. If ECharts can do it, use that. Reach for D3 only when you need something the higher-level libraries can't express cleanly. Your future self will thank you for keeping the dependency surface small."
+        }
+      ]
+    },
+    {
+      "slug": "migrating-plotly-to-streaming",
+      "title": "Migrating Plotly dashboards to a streaming pipeline",
+      "excerpt": "Lessons from cutting refresh time from 14s to 400ms on a Saint-Gobain dashboard.",
+      "date": "Feb 02, 2026",
+      "tags": ["Data-viz", "Frontend"],
+      "readingTime": "11 min",
+      "featured": false,
+      "sections": [
+        {
+          "heading": "The baseline",
+          "body": "The original dashboard polled a MS SQL database every 14 seconds, rendered a full Plotly figure server-side, and sent the HTML to the client. It worked, but 14 seconds felt like forever when operators were watching process data in real time. The goal was sub-second updates."
+        },
+        {
+          "heading": "Why streaming changed everything",
+          "body": "The key insight was separating data delivery from rendering. Instead of the server computing the chart, we had the server stream data events via Server-Sent Events and let the client update the Plotly figure incrementally using Plotly.restyle. This eliminated the round-trip serialization cost and moved rendering work to the browser, which handles it fast."
+        },
+        {
+          "heading": "The migration path",
+          "body": "We kept Plotly on the frontend but replaced the polling endpoint with an SSE stream. The FastAPI backend now runs a background task per dashboard that queries the database and pushes deltas. The client accumulates deltas into a local buffer and calls Plotly.restyle on a 400ms interval — fast enough to feel live, slow enough not to overwhelm the renderer."
+        },
+        {
+          "heading": "What we learned",
+          "body": "The hardest part was handling reconnection gracefully. SSE connections drop. We ended up building a small reconnect manager that exponentially backs off, re-fetches the last known state on reconnect, and reconciles with the local buffer. About 200 lines of code that made the difference between a demo and a production tool."
+        }
+      ]
+    },
+    {
+      "slug": "shipping-internal-tools",
+      "title": "Lessons from shipping internal tools at Fortune 500",
+      "excerpt": "Six months of building tools nobody uses unless they're better than Excel.",
+      "date": "Jan 18, 2026",
+      "tags": ["Career", "Notes"],
+      "readingTime": "7 min",
+      "featured": false,
+      "sections": [
+        {
+          "heading": "The Excel problem",
+          "body": "Internal tools fail because they're worse than the spreadsheet they're replacing. Excel is infinitely flexible, requires no training, and people already trust it. Your tool needs to be meaningfully better in the ways that matter — not just prettier. If users fall back to Excel for edge cases, you haven't shipped a tool, you've shipped a liability."
+        },
+        {
+          "heading": "Ship ugly, get feedback",
+          "body": "The most useful thing I did in the first month was ship an embarrassingly rough prototype to three users and watch them use it. They ignored the features I was proud of and immediately asked for something I hadn't thought of. That saved weeks of building the wrong thing."
+        },
+        {
+          "heading": "Discoverability over features",
+          "body": "Internal tools die in obscurity. Your best feature is useless if the person who needs it doesn't know it exists. I spent more time on onboarding flows, empty states, and contextual help than I expected. A tool that teaches itself to new users compounds: every new user arrives with context."
+        },
+        {
+          "heading": "The political layer",
+          "body": "At a large organization, the hardest part of shipping an internal tool is often not the code — it's navigating who owns what data, who needs to approve what access, and whose workflow you're threatening to automate away. Build relationships before you need them."
+        }
+      ]
+    },
+    {
+      "slug": "dataviz-reading-list",
+      "title": "Reading list: dataviz, taste, and the long view",
+      "excerpt": "Books and essays that shaped how I think about charts and craft.",
+      "date": "Dec 08, 2025",
+      "tags": ["Notes"],
+      "readingTime": "4 min",
+      "featured": false,
+      "sections": [
+        {
+          "heading": "The essential shelf",
+          "body": "Edward Tufte's The Visual Display of Quantitative Information is the foundation. Dense, opinionated, and worth re-reading every year. Envisioning Information is the better book once you've absorbed the first. Alberto Cairo's The Truthful Art is the modern complement — more data journalism, less design dogma."
+        },
+        {
+          "heading": "On craft",
+          "body": "Bret Victor's essays — Explorable Explanations, Magic Ink, Up and Down the Ladder of Abstraction — are the best writing on the future of interactive media I've found. Not about charts specifically, but about how software can augment understanding. His thinking shapes how I approach every interactive piece."
+        },
+        {
+          "heading": "On staying curious",
+          "body": "The Pudding's methodology posts are worth reading for how they approach novel dataset journalism. Information is Beautiful awards are a good annual calibration for what the field considers excellent. And following practitioners on GitHub — looking at how people actually structure their D3 code — teaches more than any book."
+        }
+      ]
+    },
+    {
+      "slug": "chart-annotations",
+      "title": "A small grammar for chart annotations",
+      "excerpt": "Annotations are the second draft of a chart. Here's a tiny system for them.",
+      "date": "Nov 22, 2025",
+      "tags": ["Data-viz"],
+      "readingTime": "5 min",
+      "featured": false,
+      "sections": [
+        {
+          "heading": "Why annotations matter",
+          "body": "A chart without annotations asks the reader to find the story. A chart with good annotations tells the story and shows the evidence. The annotation is the journalist; the chart is the source. Most charts I see in the wild are missing this layer entirely."
+        },
+        {
+          "heading": "A minimal grammar",
+          "body": "I use three annotation types: callout (a label pointing at a specific data point), band (a highlighted region with a label, for time ranges or thresholds), and note (a text block explaining methodology or caveats, usually bottom-left). These cover 90% of cases."
+        },
+        {
+          "heading": "Implementation in D3",
+          "body": "I keep annotations as a separate data array in the same JSON as the chart data. Each annotation has a type, a position anchored to a data value, and label text. The renderer places them in a separate SVG layer above the chart, so they don't interfere with zoom or brush interactions. Separation of layers saves hours of debugging."
+        }
+      ]
+    },
+    {
+      "slug": "research-intern-to-fullstack",
+      "title": "From research intern to full-stack: a path",
+      "excerpt": "How a year at St Andrews became a frontend career — what I'd tell my younger self.",
+      "date": "Oct 03, 2025",
+      "tags": ["Career"],
+      "readingTime": "9 min",
+      "featured": false,
+      "sections": [
+        {
+          "heading": "How it started",
+          "body": "I joined the School of Computer Science at St Andrews to maintain four existing web applications. The word 'maintain' understates it — the codebases were undocumented, the previous contributors had graduated, and two of the four apps were broken in production. It was the best possible introduction to real software engineering."
+        },
+        {
+          "heading": "What research taught me about software",
+          "body": "Academic software has a specific failure mode: it's built to publish, not to run. Features get added for papers, never refactored, and the person who understands any given function has usually moved to a different continent. Learning to read that kind of code — and to make it better without breaking what works — is a skill that transfers everywhere."
+        },
+        {
+          "heading": "The jump to industry",
+          "body": "Saint-Gobain was a different world: actual users, actual deadlines, and actual consequences when things broke. The research internship had given me confidence with unfamiliar codebases and a habit of reading before writing. That turned out to be exactly what the role needed."
+        },
+        {
+          "heading": "What I'd tell my younger self",
+          "body": "Take the unglamorous project. The broken app nobody wants to touch, the legacy codebase the senior engineers avoid — that's where you learn the most, fastest. Greenfield projects teach you to build. Legacy projects teach you to think."
+        }
+      ]
+    }
+  ]
+}

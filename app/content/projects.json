@@ -1,0 +1,108 @@
+{
+  "projects": [
+    {
+      "n": "01",
+      "slug": "wlm-uk",
+      "title": "Wiki Loves Monument UK",
+      "association": "Wikimedia UK",
+      "year": "2024",
+      "description": "Developed a comprehensive full-stack data visualization application from end-to-end, highlighting individual contributions to the Wiki Loves Monuments UK competition. Utilized the D3.js library to create interactive charts and maps, showcasing the extensive dataset containing more than 300,000 items across the competition's 12-year history.",
+      "imageUrl": "/images/wlm-uk.png",
+      "detailsPageUrl": "/project/wlm-uk",
+      "technologies": ["React", "Next.js", "D3.js", "Tailwind CSS", "Django", "Wikidata", "Wikimedia Commons API", "SQLite"],
+      "stats": [["300K+", "Items visualized"], ["12 yr", "Competition history"], ["Full-stack", "End-to-end build"]],
+      "liveUrl": "https://wiki-loves-monument-uk-visualisation.vercel.app/",
+      "repoUrl": "",
+      "detail": {
+        "eyebrow": "Wikimedia UK · Case study · 2024",
+        "lead": "Data Visualisation Platform for Wiki Loves Monument UK, the world's largest photo competition.",
+        "meta": {
+          "role": "Sole developer · End-to-end",
+          "timeline": "2024 · 16 weeks",
+          "stack": "Next.js · D3.js · Django · SQLite",
+          "links": [
+            { "label": "Live demo ↗", "href": "https://wiki-loves-monument-uk-visualisation.vercel.app/" }
+          ]
+        },
+        "kpis": [["300K+", "items visualized"], ["12 yr", "competition history"], ["4", "chart types built"]],
+        "sections": [
+          {
+            "heading": "Overview",
+            "body": "Developed a comprehensive full-stack data visualisation application from end-to-end, highlighting individual contributions to the Wiki Loves Monuments UK competition. Utilised the d3.js library to create interactive charts and maps, showcasing the extensive dataset containing more than 300,000 items across the competition's 12-year history."
+          },
+          {
+            "heading": "My role",
+            "body": "I assumed full ownership of the project, managing every phase from initial data collection to backend development, and ultimately, creating a compelling frontend experience. My responsibilities encompassed gathering and processing data, as well as designing and implementing data visualisation and storytelling features that brought the dataset to life."
+          },
+          {
+            "heading": "Tech stack",
+            "body": "Leveraged Next.js for front-end development, d3.js for dynamic data visualisation, Django (Python) as the web framework for backend operations, and SQLite for database management. Next.js uses both React and Node.js to offer a comprehensive framework that simplifies the development of fast, scalable, and SEO-friendly web applications."
+          },
+          {
+            "heading": "Impact",
+            "body": "The application is expected to significantly boost participation in the competition, enhance public knowledge of the Wiki Loves Monuments project, and raise awareness of UK monuments. By making these contributions visible and engaging, the project aims to foster a deeper connection between the community and UK's cultural heritage."
+          }
+        ],
+        "screens": [
+          "/images/wlm-uk/image-1.png",
+          "/images/wlm-uk/image-2.png",
+          "/images/wlm-uk/image-3.png"
+        ],
+        "prev": null,
+        "next": { "title": "Visualizing Music Trend", "href": "/project/music-trend" }
+      }
+    },
+    {
+      "n": "02",
+      "slug": "music-trend",
+      "title": "Visualizing Music Trend",
+      "association": "University of St Andrews",
+      "year": "2024",
+      "description": "Collaborated with a friend to develop a D3.js application using the Spotify Tracks Chart Dataset (2014–2023) from Kaggle, containing around 110,000 entries to analyze global music trends.",
+      "imageUrl": "/images/music-trend.png",
+      "detailsPageUrl": "/project/music-trend",
+      "technologies": ["D3.js", "JavaScript", "HTML", "CSS", "Kaggle", "Spotify API"],
+      "stats": [["110K", "Track entries"], ["10 yr", "Span analyzed"], ["1 wk", "Build sprint"]],
+      "liveUrl": "https://yuxinzhang214.github.io/Visualising-Music-Trend/",
+      "repoUrl": "",
+      "detail": {
+        "eyebrow": "University of St Andrews · Case study · 2024",
+        "lead": "D3.js application for analyzing global music trends from 2014–2023.",
+        "meta": {
+          "role": "Co-developer · Frontend & Charts",
+          "timeline": "2024 · 1 week",
+          "stack": "D3.js · JavaScript · HTML · Tailwind CSS",
+          "links": [
+            { "label": "Live demo ↗", "href": "https://yuxinzhang214.github.io/Visualising-Music-Trend/" }
+          ]
+        },
+        "kpis": [["110K", "track entries"], ["10 yr", "span analyzed"], ["5+", "chart types"]],
+        "sections": [
+          {
+            "heading": "Overview",
+            "body": "My friend and I developed a D3.js music visualization application using the Spotify Tracks Chart Dataset (2014-2023) from Kaggle, which contains around 110,000 entries. The dataset includes categorical variables like track name, release date, and artists, as well as numerical data such as rankings and streams."
+          },
+          {
+            "heading": "My role",
+            "body": "I was responsible for building the project structure in HTML and Tailwind CSS, implementing the page layout, and creating all the charts using D3.js. My teammate added additional features, like linking to Wiki pages and refining the bubble chart."
+          },
+          {
+            "heading": "Tech stack",
+            "body": "The application was developed using HTML, Tailwind CSS, and module JavaScript within one week. D3.js was used for all data visualizations, enabling rich interactive exploration of the dataset."
+          },
+          {
+            "heading": "Impact",
+            "body": "Our application visually analyzes key music trends, addressing questions like which artists consistently rank in the top ten, how music streaming has evolved over time, and what the most popular genres are. This interactive tool helps users explore and understand global music trends over nearly a decade."
+          }
+        ],
+        "screens": [
+          "/images/music-trend/image-1.png",
+          "/images/music-trend/image-2.png",
+          "/images/music-trend/image-3.png"
+        ],
+        "prev": { "title": "Wiki Loves Monument UK", "href": "/project/wlm-uk" },
+        "next": null
+      }
+    }
+  ]
+}

@@ -1,42 +1,45 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import site from '../content/site.json';
 
-const Footer = () => {
-    return (
-        <footer className="py-8">
-            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-                {/* Logo */}
-                <div className="text-2xl mb-4 md:mb-0">Yuxin</div>
+export default function Footer() {
+  return (
+    <footer className="yz-footer">
+      <div className="yz-footer-rule" style={{ marginLeft: 'var(--pad-x)', marginRight: 'var(--pad-x)' }} />
+      <div className="yz-footer-inner">
+        <div className="yz-footer-col">
+          <div className="yz-footer-name">{site.name} Zhang</div>
+          <div className="yz-footer-meta">Frontend Engineer · Based in China</div>
+        </div>
 
-                {/* Navigation Links */}
-                <div className="flex space-x-6 mb-4 md:mb-0">
-                    <a href="#" className="hover:underline transition-colors">Home</a>
-                    <a href="#" className="hover:underline transition-colors">Skills</a>
-                    <a href="#" className="hover:underline transition-colors">Service</a>
-                    <a href="#" className="hover:underline transition-colors">Experience</a>
-                    <a href="#" className="hover:underline transition-colors">Projects</a>
-                </div>
+        <div className="yz-footer-col">
+          <div className="yz-footer-label">Site</div>
+          {site.nav.map((item) => (
+            <a key={item.href} href={item.href} className="yz-footer-link">
+              {item.text}
+            </a>
+          ))}
+        </div>
 
-                {/* Social Media Icons */}
-                <div className="flex space-x-4">
-                    <a href="https://github.com/YuxinZhang214" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-opacity">
-                        <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/yuxinzhang214/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-opacity">
-                        <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
-                    </a>
-                </div>
-            </div>
+        <div className="yz-footer-col">
+          <div className="yz-footer-label">Elsewhere</div>
+          {site.social.map((s) => (
+            <a
+              key={s.platform}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="yz-footer-link"
+            >
+              {s.platform === 'github' ? 'GitHub' : 'LinkedIn'} ↗
+            </a>
+          ))}
+          <a href={`mailto:${site.email}`} className="yz-footer-link">Email ↗</a>
+        </div>
+      </div>
 
-            {/* Divider */}
-            <div className="border-t border-white-700 my-4"></div>
-
-            {/* Copyright */}
-            <p className="text-center text-gray-400 text-sm mt-4">
-                © 2024 Yuxin Zhang. All rights reserved.
-            </p>
-        </footer>
-    );
-};
-
-export default Footer;
+      <div className="yz-footer-bottom">
+        <span>{site.copyright}</span>
+        <span>Built with Next.js · Hosted on GitHub Pages</span>
+      </div>
+    </footer>
+  );
+}

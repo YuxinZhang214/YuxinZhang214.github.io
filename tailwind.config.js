@@ -6,21 +6,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'custom-bg': '#f5f5f5', 
+        'site-bg': 'oklch(98.5% 0.004 80)',
+        'site-fg': 'oklch(20% 0.01 80)',
+        'site-accent': 'oklch(55% 0.12 35)',
       },
       fontFamily: {
-        'satoshi-light': ['Satoshi-Light', 'sans-serif'],
-        'satoshi-lightitalic': ['Satoshi-LightItalic', 'sans-serif'],
+        'display': ['"Inter Tight"', '"Inter"', 'system-ui', 'sans-serif'],
+        'body': ['"Inter"', 'system-ui', 'sans-serif'],
+        'mono': ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        'serif': ['"Source Serif 4"', 'Georgia', 'serif'],
+        // keep satoshi for any legacy references
         'satoshi-regular': ['Satoshi-Regular', 'sans-serif'],
-        'satoshi-italic': ['Satoshi-Italic', 'sans-serif'],
         'satoshi-medium': ['Satoshi-Medium', 'sans-serif'],
-        'satoshi-mediumitalic': ['Satoshi-MediumItalic', 'sans-serif'],
         'satoshi-bold': ['Satoshi-Bold', 'sans-serif'],
-        'satoshi-bolditalic': ['Satoshi-BoldItalic', 'sans-serif'],
-        'satoshi-black': ['Satoshi-Black', 'sans-serif'],
-        'satoshi-blackitalic': ['Satoshi-BlackItalic', 'sans-serif'],
-        'satoshi-variable': ['Satoshi-Variable', 'sans-serif'],
-        'satoshi-variableitalic': ['Satoshi-VariableItalic', 'sans-serif'],
+      },
+      maxWidth: {
+        'site': '1280px',
       },
     },
   },

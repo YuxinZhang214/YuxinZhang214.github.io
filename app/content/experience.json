@@ -1,0 +1,29 @@
+{
+  "experiences": [
+    {
+      "period": "Jul 2024 — Nov 2024",
+      "current": true,
+      "company": "Saint-Gobain Research (Shanghai)",
+      "role": "Frontend Development, Research Engineer",
+      "recognition": "Top in Building Materials · Fortune 500",
+      "desc": "Developing AI-driven platforms and internal digitalization tools on low-code platforms to increase organizational productivity.",
+      "tech": ["Python", "Plotly", "Matplotlib", "Ignition Perspective", "Flask", "FastAPI", "MS SQL", "GitLab"]
+    },
+    {
+      "period": "Apr 2024 — Jun 2024",
+      "company": "Saint-Gobain Research (Shanghai)",
+      "role": "Frontend Development Intern",
+      "recognition": "Top in Building Materials · Fortune 500",
+      "desc": "Worked on frontend development projects, improving user interfaces and experiences.",
+      "tech": ["Python", "Ignition Perspective", "Flask", "FastAPI", "MS SQL", "GitLab"]
+    },
+    {
+      "period": "Jun 2023 — Jan 2024",
+      "company": "School of Computer Science, University of St Andrews",
+      "role": "Research Intern",
+      "recognition": "UK's Top University",
+      "desc": "Maintained and improved four existing web applications for academic projects.",
+      "tech": ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS", "HTML", "CSS", "GitHub Actions"]
+    }
+  ]
+}

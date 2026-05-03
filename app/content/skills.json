@@ -1,0 +1,30 @@
+{
+  "groups": {
+    "Frontend": [
+      ["React", "Daily"],
+      ["Next.js", "Daily"],
+      ["TypeScript", "Daily"],
+      ["JavaScript", "Daily"],
+      ["Tailwind CSS", "Daily"],
+      ["HTML / CSS", "Daily"],
+      ["D3.js", "Often"]
+    ],
+    "Backend": [
+      ["Node.js", "Often"],
+      ["Python", "Often"],
+      ["Django", "Often"],
+      ["Flask", "Often"],
+      ["FastAPI", "Often"],
+      ["Express.js", "Sometimes"]
+    ],
+    "Data & Infra": [
+      ["MS SQL", "Often"],
+      ["SQLite", "Often"],
+      ["Plotly", "Often"],
+      ["Ignition", "Often"],
+      ["GitHub", "Daily"],
+      ["GitLab", "Often"],
+      ["Linux", "Often"]
+    ]
+  }
+}

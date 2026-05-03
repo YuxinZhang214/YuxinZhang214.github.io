@@ -1,0 +1,19 @@
+{
+  "services": [
+    {
+      "n": "01",
+      "title": "Data Visualisation",
+      "description": "Develop customised data visualisation solutions that transform complex data into intuitive charts and dashboards, enabling businesses to identify trends quickly."
+    },
+    {
+      "n": "02",
+      "title": "Low-Code Platform",
+      "description": "Develop low-code platforms that accelerate application development, reduce costs, and enhance business agility."
+    },
+    {
+      "n": "03",
+      "title": "Digital Transformation",
+      "description": "Leverage front-end technologies to modernise business processes, improve UX, and enhance operational efficiency."
+    }
+  ]
+}

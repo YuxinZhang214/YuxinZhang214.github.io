@@ -1,41 +1,21 @@
 import React from 'react';
 import SkillIcon from './ui/SkillIcon';
+import content from '../../content/skills.json';
 
 const Skills: React.FC = () => {
   return (
     <section className="">
       <div className="container mx-auto text-center">
-        {/* Frontend Technologies */}
-        <div className="flex flex-wrap justify-center gap-12 mb-12">
-          <SkillIcon src="/skills/react.png" alt="ReactJS" name="ReactJS" />
-          <SkillIcon src="/skills/javascript.png" alt="JavaScript" name="JavaScript" />
-          <SkillIcon src="/skills/css.png" alt="CSS" name="CSS" />
-          <SkillIcon src="/skills/html.png" alt="HTML" name="HTML" />
-          <SkillIcon src="/skills/d3.jpeg" alt="D3.js" name="D3.js" />
-          <SkillIcon src="/skills/tailwindcss.png" alt="Tailwind CSS" name="Tailwind CSS" />
-          <SkillIcon src="next.svg" alt="NextJS" name="NextJS" />
-        </div>
-
-        {/* Backend Technologies */}
-        <div className="flex flex-wrap justify-center gap-12 mb-12">
-          <SkillIcon src="/skills/nodejs.png" alt="Node.js" name="Node.js" />
-          <SkillIcon src="/skills/express.svg" alt="Express.js" name="Express.js" />
-          <SkillIcon src="/skills/python.jpeg" alt="Python" name="Python" />
-          <SkillIcon src="/skills/plotly.png" alt="Plotly" name="Plotly" />
-          <SkillIcon src="/skills/django.png" alt="Django" name="Django" />
-          <SkillIcon src="/skills/flask.png" alt="Flask" name="Flask" />
-          <SkillIcon src="/skills/fastapi.png" alt="FastAPI" name="FastAPI" />
-        </div>
-
-        {/* Database and other Technologies */}
-        <div className="flex flex-wrap justify-center gap-12">
-          <SkillIcon src="/skills/MS-SQL.png" alt="MS SQL" name="MS SQL" />
-          <SkillIcon src="/skills/sqlite.jpeg" alt="Sqlite" name="Sqlite" />
-          <SkillIcon src="/skills/github.png" alt="Github" name="Github" />
-          <SkillIcon src="/skills/gitlab.png" alt="Gitlab" name="Gitlab" />
-          <SkillIcon src="/skills/linux.jpeg" alt="Linux" name="Linux" />
-          <SkillIcon src="/skills/macos.png" alt="MacOS" name="MacOS" />
-        </div>
+        {content.categories.map((category, i) => (
+          <div
+            key={category.name}
+            className={`flex flex-wrap justify-center gap-12 ${i < content.categories.length - 1 ? 'mb-12' : ''}`}
+          >
+            {category.skills.map((skill) => (
+              <SkillIcon key={skill.name} src={skill.src} alt={skill.alt} name={skill.name} />
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -1,0 +1,42 @@
+{
+  "updatedAt": "Apr 2026",
+  "homeItems": [
+    {
+      "label": "Building",
+      "value": "A D3 component library for ops dashboards",
+      "sub": "Iterating on chart primitives"
+    },
+    {
+      "label": "Reading",
+      "value": "\"The Visual Display of Quantitative Information\"",
+      "sub": "Edward Tufte · 2nd ed."
+    },
+    {
+      "label": "Learning",
+      "value": "WebGL & Three.js for 3D viz",
+      "sub": "Side-project: globe of monuments"
+    }
+  ],
+  "aboutCards": [
+    {
+      "label": "Working",
+      "value": "Building a D3 component library for Saint-Gobain ops dashboards.",
+      "sub": "Iterating on chart primitives & a streaming data layer."
+    },
+    {
+      "label": "Reading",
+      "value": "\"The Visual Display of Quantitative Information\" — Tufte.",
+      "sub": "Plus catching up on Bret Victor's old essays."
+    },
+    {
+      "label": "Learning",
+      "value": "WebGL & Three.js for 3D data visualization.",
+      "sub": "Side project: a globe of UK monuments."
+    },
+    {
+      "label": "Looking for",
+      "value": "Frontend / full-stack roles in dataviz & platforms.",
+      "sub": "Open to remote, EU, or Shanghai-based."
+    }
+  ]
+}

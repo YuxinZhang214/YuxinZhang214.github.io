@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="yz-footer-inner">
         <div className="yz-footer-col">
           <div className="yz-footer-name">{site.name} Zhang</div>
-          <div className="yz-footer-meta">Frontend Engineer · Based in China</div>
+          <div className="yz-footer-meta">Software Engineer · AI/ML · Based in China</div>
         </div>
 
         <div className="yz-footer-col">

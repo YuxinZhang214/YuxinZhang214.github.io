@@ -3,40 +3,61 @@
   "homeItems": [
     {
       "label": "Building",
+      "labelZh": "开发中",
       "value": "A D3 component library for ops dashboards",
-      "sub": "Iterating on chart primitives"
+      "valueZh": "为运营仪表盘构建 D3 组件库",
+      "sub": "Iterating on chart primitives",
+      "subZh": "持续迭代图表基础组件"
     },
     {
       "label": "Reading",
+      "labelZh": "阅读中",
       "value": "\"The Visual Display of Quantitative Information\"",
-      "sub": "Edward Tufte · 2nd ed."
+      "valueZh": "《定量信息的视觉呈现》",
+      "sub": "Edward Tufte · 2nd ed.",
+      "subZh": "爱德华·塔夫特 · 第二版"
     },
     {
       "label": "Learning",
+      "labelZh": "学习中",
       "value": "WebGL & Three.js for 3D viz",
-      "sub": "Side-project: globe of monuments"
+      "valueZh": "WebGL 与 Three.js 三维可视化",
+      "sub": "Side-project: globe of monuments",
+      "subZh": "个人项目：古迹地球仪"
     }
   ],
   "aboutCards": [
     {
       "label": "Working",
+      "labelZh": "工作",
       "value": "Building a D3 component library for Saint-Gobain ops dashboards.",
-      "sub": "Iterating on chart primitives & a streaming data layer."
+      "valueZh": "为圣戈班运营仪表盘构建 D3 组件库。",
+      "sub": "Iterating on chart primitives & a streaming data layer.",
+      "subZh": "持续迭代图表基础组件与流式数据层。"
     },
     {
       "label": "Reading",
+      "labelZh": "阅读",
       "value": "\"The Visual Display of Quantitative Information\" — Tufte.",
-      "sub": "Plus catching up on Bret Victor's old essays."
+      "valueZh": "《定量信息的视觉呈现》——塔夫特。",
+      "sub": "Plus catching up on Bret Victor's old essays.",
+      "subZh": "同时补读 Bret Victor 的旧文章。"
     },
     {
       "label": "Learning",
+      "labelZh": "学习",
       "value": "WebGL & Three.js for 3D data visualization.",
-      "sub": "Side project: a globe of UK monuments."
+      "valueZh": "WebGL 与 Three.js 三维数据可视化。",
+      "sub": "Side project: a globe of UK monuments.",
+      "subZh": "个人项目：英国古迹地球仪。"
     },
     {
       "label": "Looking for",
+      "labelZh": "寻求",
       "value": "Frontend / full-stack roles in dataviz & platforms.",
-      "sub": "Open to remote, EU, or Shanghai-based."
+      "valueZh": "数据可视化与平台方向的前端/全栈职位。",
+      "sub": "Open to remote, EU, or Shanghai-based.",
+      "subZh": "接受远程、欧洲或上海的岗位。"
     }
   ]
 }

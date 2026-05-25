@@ -1,79 +1,127 @@
+'use client';
+
 import { notFound } from 'next/navigation';
+import { useState } from 'react';
 import blogContent from '../../content/blog.json';
+import { useLanguage } from '../../context/LanguageContext';
 
-export function generateStaticParams() {
-  return blogContent.posts.map((p) => ({ slug: p.slug }));
-}
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const { t } = useLanguage();
+  const [currentSection, setCurrentSection] = useState(0);
 
-interface Props {
-  params: { slug: string };
-}
-
-export default function BlogPostPage({ params }: Props) {
   const post = blogContent.posts.find((p) => p.slug === params.slug);
   if (!post) notFound();
 
   return (
     <>
-      <article style={{ paddingTop: 'clamp(32px, 4vw, 56px)', paddingBottom: 'clamp(48px, 6vw, 96px)' }}>
-        {/* Breadcrumb */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-          <a href="/blog" className="yz-mono" style={{ color: 'var(--fg-3)' }}>← Blog</a>
+      {/* Header */}
+      <div className="yz-post-hero">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+          <a href="/blog" className="yz-mono" style={{ color: 'var(--fg-3)' }}>← {t('Blog', '博客')}</a>
           <span className="yz-mono" style={{ color: 'var(--fg-3)' }}>/</span>
-          <span className="yz-mono" style={{ color: 'var(--fg-2)' }}>
-            {post.tags[0]}
-          </span>
+          <span className="yz-mono" style={{ color: 'var(--fg-2)' }}>{post.tags[0]}</span>
         </div>
-
-        {/* Header */}
         <div className="yz-eyebrow">{post.tags.join(' · ')}</div>
-        <h1 className="yz-h1" style={{ maxWidth: '20ch', marginTop: 14, marginBottom: 16 }}>
-          {post.title}
-        </h1>
-        <div className="yz-mono" style={{ marginBottom: 40 }}>
-          {post.date} · {post.readingTime} read
+        <h1>{t(post.title, post.titleZh)}</h1>
+        <div className="yz-post-meta">
+          <span>{post.date}</span>
+          <span>·</span>
+          <span>{post.readingTime} {t('read', '分钟')}</span>
+          <span>·</span>
+          <span>{t('Yuxin Zhang', '张宇欣')}</span>
         </div>
+      </div>
 
-        {/* Body */}
-        <div style={{ maxWidth: '68ch' }}>
+      {/* 3-column body */}
+      <div className="yz-post-body-wrap">
+        {/* TOC */}
+        <aside className="yz-toc">
+          <div className="yz-toc-label">{t('On this page', '本页目录')}</div>
+          <ol>
+            {post.sections.map((section, i) => (
+              <li
+                key={section.heading}
+                className={currentSection === i ? 'is-current' : ''}
+                onClick={() => setCurrentSection(i)}
+              >
+                {t(section.heading, section.headingZh)}
+              </li>
+            ))}
+          </ol>
+          <div style={{ marginTop: 28 }}>
+            <div className="yz-toc-label">{t('Share', '分享')}</div>
+            <div className="yz-share">
+              <a className="yz-share-btn" href="#" aria-label="Copy link">↗</a>
+              <a className="yz-share-btn" href="#" aria-label="Share on X">𝕏</a>
+              <a className="yz-share-btn" href="#" aria-label="Share on LinkedIn">in</a>
+            </div>
+          </div>
+        </aside>
+
+        {/* Article */}
+        <article className="yz-prose">
           {post.sections.map((section) => (
-            <div key={section.heading} style={{ marginBottom: 32 }}>
-              <h2 style={{
-                fontFamily: 'var(--font-display)',
-                fontWeight: 600,
-                fontSize: 22,
-                letterSpacing: '-0.012em',
-                margin: '0 0 12px',
-                color: 'var(--fg)',
-              }}>
-                {section.heading}
-              </h2>
-              <p style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 18,
-                lineHeight: 1.7,
-                color: 'var(--fg-2)',
-                margin: 0,
-              }}>
-                {section.body}
-              </p>
+            <div key={section.heading} id={section.heading.toLowerCase().replace(/\s+/g, '-')}>
+              <h2>{t(section.heading, section.headingZh)}</h2>
+              <p>{t(section.body, section.bodyZh)}</p>
             </div>
           ))}
-        </div>
+        </article>
 
-        {/* Tags */}
-        <div className="yz-proj-tags" style={{ marginTop: 48, paddingTop: 24, borderTop: '1px solid var(--hair)' }}>
-          {post.tags.map((t) => (
-            <span key={t} className="yz-tag">{t}</span>
-          ))}
-        </div>
-      </article>
+        {/* Right aside */}
+        <aside className="yz-aside yz-post-aside-right">
+          <div className="yz-aside-block">
+            <div className="yz-detail-side-label">{t('Tags', '标签')}</div>
+            <div className="yz-proj-tags">
+              {post.tags.map((tag) => (
+                <span key={tag} className="yz-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+          <div className="yz-aside-block">
+            <div className="yz-detail-side-label">{t('Related', '相关文章')}</div>
+            <div style={{ display: 'grid', gap: 12 }}>
+              {blogContent.posts
+                .filter((p) => p.slug !== post.slug && p.tags.some((tag) => post.tags.includes(tag)))
+                .slice(0, 2)
+                .map((related) => (
+                  <a
+                    key={related.slug}
+                    href={`/blog/${related.slug}`}
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontWeight: 500,
+                      fontSize: 14.5,
+                      lineHeight: 1.3,
+                      letterSpacing: '-0.01em',
+                      color: 'var(--fg)',
+                    }}
+                  >
+                    {t(related.title, related.titleZh)}
+                  </a>
+                ))}
+            </div>
+          </div>
+        </aside>
+      </div>
 
-      {/* Back nav */}
+      {/* Comments */}
+      <section className="yz-comments">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
+          <h3 className="yz-h3">{t('Comments', '评论')}</h3>
+          <span className="yz-mono">{t('Sign in to comment', '登录后评论')}</span>
+        </div>
+        <form className="yz-comment-form" onSubmit={(e) => e.preventDefault()}>
+          <textarea className="yz-comment-input" placeholder={t('Add to the discussion…', '加入讨论…')} />
+          <button className="yz-comment-submit" type="submit">{t('Post comment', '发表评论')}</button>
+        </form>
+      </section>
+
+      {/* Nav */}
       <div className="yz-detail-nav">
         <a href="/blog">
-          <span className="nav-label">← All posts</span>
-          <span className="nav-title">Blog</span>
+          <span className="nav-label">← {t('All posts', '所有文章')}</span>
+          <span className="nav-title">{t('Blog', '博客')}</span>
         </a>
         <div />
       </div>

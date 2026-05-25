@@ -5,16 +5,22 @@
       "current": true,
       "school": "Imperial College London",
       "degree": "MSc Computing (Artificial Intelligence and Machine Learning)",
+      "degreeZh": "计算机科学硕士（人工智能与机器学习）",
       "recognition": "UK's Top Computing Programme",
+      "recognitionZh": "英国顶尖计算机课程",
       "desc": "Specializing in machine learning, deep learning, and applied AI. Coursework spans NLP, computer vision, reinforcement learning, and scalable ML systems.",
+      "descZh": "专注于机器学习、深度学习及应用 AI。课程涵盖 NLP、计算机视觉、强化学习与可扩展 ML 系统。",
       "tech": ["Python", "PyTorch", "TensorFlow", "scikit-learn", "NumPy", "Pandas"]
     },
     {
       "period": "Sep 2020 — Jun 2024",
       "school": "University of St Andrews",
       "degree": "BSc Computer Science (First Class Honours)",
+      "degreeZh": "计算机科学学士（一等荣誉）",
       "recognition": "UK's Top University",
+      "recognitionZh": "英国顶尖大学",
       "desc": "Foundation in algorithms, systems, software engineering, and HCI. Final-year dissertation in data visualization for cultural heritage datasets.",
+      "descZh": "扎实的算法、系统、软件工程与人机交互基础。毕业论文方向：文化遗产数据集的数据可视化。",
       "tech": ["Java", "Python", "JavaScript", "Algorithms", "Software Engineering", "HCI"]
     }
   ]

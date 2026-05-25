@@ -1,15 +1,19 @@
 {
   "hero": {
     "title": "Frontend Engineer",
+    "titleZh": "软件工程师",
     "intro": {
       "name": "Yuxin Zhang",
-      "text": "a Frontend Engineer and a Full-stack Software Engineer based in China with six month of industry experience, specializing in data visualization and low-code platform development."
+      "nameZh": "张宇欣",
+      "text": "a Software Engineer working across AI/ML and full-stack, based in China with six months of industry experience, specializing in data visualization and low-code platform development.",
+      "textZh": "一位专注于 AI/ML 与全栈开发的软件工程师，现居中国，拥有六个月的工业经验，专注于数据可视化与低代码平台开发。"
     },
-    "body": "I love using frontend technologies to solve real-world problems. I've worked on AI-powered platforms and internal digital tools that streamline decision-making and boost productivity. My main interests lie in building intuitive, high-performance data visualization tools and low-code platforms that drive digital transformation."
+    "body": "I love using frontend technologies to solve real-world problems. I've worked on AI-powered platforms and internal digital tools that streamline decision-making and boost productivity. My main interests lie in building intuitive, high-performance data visualization tools and low-code platforms that drive digital transformation.",
+    "bodyZh": "我热爱用前端技术解决现实问题。我曾参与构建 AI 驱动平台及内部数字化工具，以提升组织效率与决策能力。我对高性能数据可视化工具和低代码平台尤为感兴趣，致力于推动数字化转型。"
   },
   "cta": [
-    { "text": "See my projects", "href": "/project" },
-    { "text": "See my blog posts", "href": "/blog" },
-    { "text": "Know more about my experience", "href": "/blog" }
+    { "text": "See my projects", "textZh": "查看我的项目", "href": "/project" },
+    { "text": "See my blog posts", "textZh": "阅读我的博客", "href": "/blog" },
+    { "text": "Know more about my experience", "textZh": "了解我的经历", "href": "/about" }
   ]
 }

@@ -3,7 +3,9 @@
     {
       "slug": "low-code-component-registry",
       "title": "Notes on building a low-code component registry",
+      "titleZh": "构建低代码组件注册表的思考",
       "excerpt": "How we organize a registry of 60+ blocks so non-engineers can compose dashboards.",
+      "excerptZh": "我们如何组织 60 余个区块的注册表，让非工程师也能自主组合仪表盘。",
       "date": "Apr 24, 2026",
       "tags": ["Low-code", "Frontend"],
       "readingTime": "8 min",
@@ -11,26 +13,36 @@
       "sections": [
         {
           "heading": "The problem",
-          "body": "After eight months building a low-code platform at Saint-Gobain, the hardest part wasn't the drag-and-drop canvas or the rendering engine — it was keeping the component registry sane as it grew past sixty blocks. Non-engineers needed to compose dashboards without filing a ticket, but every new block added friction."
+          "headingZh": "问题所在",
+          "body": "After eight months building a low-code platform at Saint-Gobain, the hardest part wasn't the drag-and-drop canvas or the rendering engine — it was keeping the component registry sane as it grew past sixty blocks. Non-engineers needed to compose dashboards without filing a ticket, but every new block added friction.",
+          "bodyZh": "在圣戈班做了八个月低代码平台，最难的不是拖拽画布或渲染引擎——而是当组件注册表超过六十个区块后如何保持它的可维护性。非工程师需要自主组合仪表盘，但每新增一个区块都会增加阻力。"
         },
         {
           "heading": "What a registry actually is",
-          "body": "A registry is just a lookup table: slug → component + schema. The slug is what gets stored in the dashboard JSON. The schema tells the form renderer what fields to show. The component is what gets rendered. Keep these three things in sync and everything else falls out."
+          "headingZh": "注册表的本质",
+          "body": "A registry is just a lookup table: slug → component + schema. The slug is what gets stored in the dashboard JSON. The schema tells the form renderer what fields to show. The component is what gets rendered. Keep these three things in sync and everything else falls out.",
+          "bodyZh": "注册表不过是一张查找表：slug → 组件 + schema。slug 存储在仪表盘 JSON 中，schema 告诉表单渲染器显示哪些字段，component 负责实际渲染。保持这三者同步，其他问题迎刃而解。"
         },
         {
           "heading": "How we organized it",
-          "body": "We settled on a folder-per-block convention: each block lives in /blocks/<slug>/ with index.tsx, schema.json, and a preview.png. A build script crawls that directory and generates the registry at compile time. No runtime magic, no database — just a generated TypeScript file imported by the renderer."
+          "headingZh": "我们的组织方式",
+          "body": "We settled on a folder-per-block convention: each block lives in /blocks/<slug>/ with index.tsx, schema.json, and a preview.png. A build script crawls that directory and generates the registry at compile time. No runtime magic, no database — just a generated TypeScript file imported by the renderer.",
+          "bodyZh": "我们采用「每个区块一个文件夹」的约定：每个区块位于 /blocks/<slug>/，包含 index.tsx、schema.json 和 preview.png。构建脚本在编译时遍历该目录生成注册表——无运行时魔法，无数据库，只是一个由渲染器导入的 TypeScript 生成文件。"
         },
         {
           "heading": "The parts that still need a human",
-          "body": "Discoverability is the unsolved problem. Sixty blocks in a flat grid is too many to scroll. We added categories and a search, but the real fix is fewer, more composable blocks. Every time we resisted adding a new block and instead made an existing one more configurable, the platform got better."
+          "headingZh": "仍需人工介入的部分",
+          "body": "Discoverability is the unsolved problem. Sixty blocks in a flat grid is too many to scroll. We added categories and a search, but the real fix is fewer, more composable blocks. Every time we resisted adding a new block and instead made an existing one more configurable, the platform got better.",
+          "bodyZh": "可发现性是尚未解决的问题。六十个区块平铺显示实在太多。我们添加了分类和搜索，但根本解决方案是更少、更可组合的区块。每次我们忍住不新增区块、转而让现有区块更可配置，平台就变得更好。"
         }
       ]
     },
     {
       "slug": "d3-vs-other-viz-layers",
       "title": "When D3 is too much: picking the right viz layer",
+      "titleZh": "D3 何时显得过重：选择合适的可视化层",
       "excerpt": "A field guide for choosing between D3, ECharts, Plot, and a hand-rolled SVG.",
+      "excerptZh": "在 D3、ECharts、Plot 与手写 SVG 之间如何选择的实用指南。",
       "date": "Mar 12, 2026",
       "tags": ["Data-viz"],
       "readingTime": "6 min",
@@ -38,26 +50,36 @@
       "sections": [
         {
           "heading": "The spectrum",
-          "body": "Visualization libraries sit on a spectrum from declarative to imperative. At one end: Vega-Lite, Observable Plot — you describe the chart, the library draws it. At the other: raw SVG and Canvas, where you control every pixel. D3 sits in the middle, which is why it confuses people."
+          "headingZh": "工具谱系",
+          "body": "Visualization libraries sit on a spectrum from declarative to imperative. At one end: Vega-Lite, Observable Plot — you describe the chart, the library draws it. At the other: raw SVG and Canvas, where you control every pixel. D3 sits in the middle, which is why it confuses people.",
+          "bodyZh": "可视化库从声明式到命令式排成一个谱系。一端是 Vega-Lite、Observable Plot——你描述图表，库负责绘制；另一端是原生 SVG 与 Canvas，你控制每一个像素。D3 居中，这正是它让人困惑的原因。"
         },
         {
           "heading": "When to reach for D3",
-          "body": "D3 is the right choice when you need custom geometry that no chart library supports, when you're building reusable chart primitives for a design system, or when you need fine-grained control over transitions and interactions. If you're rendering a bar chart, D3 is probably too much."
+          "headingZh": "何时选用 D3",
+          "body": "D3 is the right choice when you need custom geometry that no chart library supports, when you're building reusable chart primitives for a design system, or when you need fine-grained control over transitions and interactions. If you're rendering a bar chart, D3 is probably too much.",
+          "bodyZh": "当你需要任何图表库都不支持的自定义几何形状、为设计系统构建可复用图表基础组件，或需要对过渡动画与交互进行精细控制时，D3 是正确选择。如果只是渲染一个柱状图，D3 可能就显得多余了。"
         },
         {
           "heading": "The alternatives worth knowing",
-          "body": "ECharts handles most dashboard charts with less code and better performance on large datasets. Observable Plot is excellent for exploratory analysis. For simple one-off charts, a hand-rolled SVG with hardcoded paths is often cleaner than pulling in a dependency. Recharts and Victory are good if you're already deep in a React component tree and need quick results."
+          "headingZh": "值得了解的替代方案",
+          "body": "ECharts handles most dashboard charts with less code and better performance on large datasets. Observable Plot is excellent for exploratory analysis. For simple one-off charts, a hand-rolled SVG with hardcoded paths is often cleaner than pulling in a dependency. Recharts and Victory are good if you're already deep in a React component tree and need quick results.",
+          "bodyZh": "ECharts 用更少的代码处理大多数仪表盘图表，在大数据集上性能更优。Observable Plot 非常适合探索性分析。对于简单的一次性图表，手写 SVG 往往比引入依赖更简洁。Recharts 和 Victory 适合已深度使用 React 且需要快速出图的场景。"
         },
         {
           "heading": "The rule",
-          "body": "Start with the most constrained tool that meets your requirements. If Observable Plot can do it, use that. If ECharts can do it, use that. Reach for D3 only when you need something the higher-level libraries can't express cleanly. Your future self will thank you for keeping the dependency surface small."
+          "headingZh": "选择原则",
+          "body": "Start with the most constrained tool that meets your requirements. If Observable Plot can do it, use that. If ECharts can do it, use that. Reach for D3 only when you need something the higher-level libraries can't express cleanly. Your future self will thank you for keeping the dependency surface small.",
+          "bodyZh": "从满足需求的最受限工具开始。Observable Plot 能做就用它；ECharts 能做就用它。只有在高层库无法清晰表达时才选用 D3。保持小的依赖面，你未来的自己会感谢你。"
         }
       ]
     },
     {
       "slug": "migrating-plotly-to-streaming",
       "title": "Migrating Plotly dashboards to a streaming pipeline",
+      "titleZh": "将 Plotly 仪表盘迁移至流式管道",
       "excerpt": "Lessons from cutting refresh time from 14s to 400ms on a Saint-Gobain dashboard.",
+      "excerptZh": "将圣戈班仪表盘刷新时间从 14 秒压缩至 400 毫秒的经验总结。",
       "date": "Feb 02, 2026",
       "tags": ["Data-viz", "Frontend"],
       "readingTime": "11 min",
@@ -65,26 +87,36 @@
       "sections": [
         {
           "heading": "The baseline",
-          "body": "The original dashboard polled a MS SQL database every 14 seconds, rendered a full Plotly figure server-side, and sent the HTML to the client. It worked, but 14 seconds felt like forever when operators were watching process data in real time. The goal was sub-second updates."
+          "headingZh": "初始状态",
+          "body": "The original dashboard polled a MS SQL database every 14 seconds, rendered a full Plotly figure server-side, and sent the HTML to the client. It worked, but 14 seconds felt like forever when operators were watching process data in real time. The goal was sub-second updates.",
+          "bodyZh": "原始仪表盘每 14 秒轮询一次 MS SQL 数据库，在服务端渲染完整的 Plotly 图表再发送 HTML 给客户端。虽然能用，但对于需要实时监控生产数据的操作人员来说，14 秒的等待简直是一辈子。目标是实现亚秒级更新。"
         },
         {
           "heading": "Why streaming changed everything",
-          "body": "The key insight was separating data delivery from rendering. Instead of the server computing the chart, we had the server stream data events via Server-Sent Events and let the client update the Plotly figure incrementally using Plotly.restyle. This eliminated the round-trip serialization cost and moved rendering work to the browser, which handles it fast."
+          "headingZh": "流式传输为何改变了一切",
+          "body": "The key insight was separating data delivery from rendering. Instead of the server computing the chart, we had the server stream data events via Server-Sent Events and let the client update the Plotly figure incrementally using Plotly.restyle. This eliminated the round-trip serialization cost and moved rendering work to the browser.",
+          "bodyZh": "核心洞察是将数据传输与渲染分离。服务端不再计算图表，而是通过 Server-Sent Events 流式推送数据事件，由客户端使用 Plotly.restyle 增量更新图表。这消除了往返序列化的开销，将渲染工作迁移至浏览器端。"
         },
         {
           "heading": "The migration path",
-          "body": "We kept Plotly on the frontend but replaced the polling endpoint with an SSE stream. The FastAPI backend now runs a background task per dashboard that queries the database and pushes deltas. The client accumulates deltas into a local buffer and calls Plotly.restyle on a 400ms interval — fast enough to feel live, slow enough not to overwhelm the renderer."
+          "headingZh": "迁移路径",
+          "body": "We kept Plotly on the frontend but replaced the polling endpoint with an SSE stream. The FastAPI backend now runs a background task per dashboard that queries the database and pushes deltas. The client accumulates deltas into a local buffer and calls Plotly.restyle on a 400ms interval.",
+          "bodyZh": "前端保留 Plotly，将轮询端点替换为 SSE 流。FastAPI 后端为每个仪表盘运行一个后台任务，查询数据库并推送增量数据。客户端将增量数据积累到本地缓冲区，以 400ms 的间隔调用 Plotly.restyle。"
         },
         {
           "heading": "What we learned",
-          "body": "The hardest part was handling reconnection gracefully. SSE connections drop. We ended up building a small reconnect manager that exponentially backs off, re-fetches the last known state on reconnect, and reconciles with the local buffer. About 200 lines of code that made the difference between a demo and a production tool."
+          "headingZh": "经验总结",
+          "body": "The hardest part was handling reconnection gracefully. SSE connections drop. We ended up building a small reconnect manager that exponentially backs off, re-fetches the last known state on reconnect, and reconciles with the local buffer. About 200 lines of code that made the difference between a demo and a production tool.",
+          "bodyZh": "最难的部分是优雅地处理重连。SSE 连接会断开。我们最终构建了一个小型重连管理器：指数退避、重连时重新获取最后已知状态并与本地缓冲区对账。大约 200 行代码，造就了从 Demo 到生产工具的本质区别。"
         }
       ]
     },
     {
       "slug": "shipping-internal-tools",
       "title": "Lessons from shipping internal tools at Fortune 500",
+      "titleZh": "在世界500强企业落地内部工具的经验",
       "excerpt": "Six months of building tools nobody uses unless they're better than Excel.",
+      "excerptZh": "六个月的经验：没人会用一个不比 Excel 更好的工具。",
       "date": "Jan 18, 2026",
       "tags": ["Career", "Notes"],
       "readingTime": "7 min",
@@ -92,26 +124,36 @@
       "sections": [
         {
           "heading": "The Excel problem",
-          "body": "Internal tools fail because they're worse than the spreadsheet they're replacing. Excel is infinitely flexible, requires no training, and people already trust it. Your tool needs to be meaningfully better in the ways that matter — not just prettier. If users fall back to Excel for edge cases, you haven't shipped a tool, you've shipped a liability."
+          "headingZh": "Excel 问题",
+          "body": "Internal tools fail because they're worse than the spreadsheet they're replacing. Excel is infinitely flexible, requires no training, and people already trust it. Your tool needs to be meaningfully better in the ways that matter — not just prettier.",
+          "bodyZh": "内部工具失败，是因为它们比所替代的电子表格还要差。Excel 无限灵活、无需培训，人们已经信任它了。你的工具需要在真正重要的方面明显更好——不只是更好看。"
         },
         {
           "heading": "Ship ugly, get feedback",
-          "body": "The most useful thing I did in the first month was ship an embarrassingly rough prototype to three users and watch them use it. They ignored the features I was proud of and immediately asked for something I hadn't thought of. That saved weeks of building the wrong thing."
+          "headingZh": "先发布，再迭代",
+          "body": "The most useful thing I did in the first month was ship an embarrassingly rough prototype to three users and watch them use it. They ignored the features I was proud of and immediately asked for something I hadn't thought of. That saved weeks of building the wrong thing.",
+          "bodyZh": "第一个月最有价值的事，是把一个粗糙得让人难堪的原型交给三个用户，然后观察他们如何使用。他们对我引以为傲的功能视而不见，立刻提出了我根本没想到的需求。这节省了数周构建错误方向的时间。"
         },
         {
           "heading": "Discoverability over features",
-          "body": "Internal tools die in obscurity. Your best feature is useless if the person who needs it doesn't know it exists. I spent more time on onboarding flows, empty states, and contextual help than I expected. A tool that teaches itself to new users compounds: every new user arrives with context."
+          "headingZh": "可发现性优于功能堆砌",
+          "body": "Internal tools die in obscurity. Your best feature is useless if the person who needs it doesn't know it exists. I spent more time on onboarding flows, empty states, and contextual help than I expected.",
+          "bodyZh": "内部工具死于默默无闻。如果需要某个功能的人不知道它的存在，这个功能就毫无价值。我花在引导流程、空状态和上下文帮助上的时间，远超预期。"
         },
         {
           "heading": "The political layer",
-          "body": "At a large organization, the hardest part of shipping an internal tool is often not the code — it's navigating who owns what data, who needs to approve what access, and whose workflow you're threatening to automate away. Build relationships before you need them."
+          "headingZh": "政治层面",
+          "body": "At a large organization, the hardest part of shipping an internal tool is often not the code — it's navigating who owns what data, who needs to approve what access, and whose workflow you're threatening to automate away. Build relationships before you need them.",
+          "bodyZh": "在大型组织中，落地内部工具最难的往往不是代码——而是厘清谁拥有哪些数据、谁需要审批哪些访问权限，以及你的自动化方案会冲击谁的工作流程。要在需要之前就建立好关系。"
         }
       ]
     },
     {
       "slug": "dataviz-reading-list",
       "title": "Reading list: dataviz, taste, and the long view",
+      "titleZh": "阅读书单：数据可视化、品味与长远眼光",
       "excerpt": "Books and essays that shaped how I think about charts and craft.",
+      "excerptZh": "塑造了我对图表与设计理解的书籍与文章。",
       "date": "Dec 08, 2025",
       "tags": ["Notes"],
       "readingTime": "4 min",
@@ -119,22 +161,30 @@
       "sections": [
         {
           "heading": "The essential shelf",
-          "body": "Edward Tufte's The Visual Display of Quantitative Information is the foundation. Dense, opinionated, and worth re-reading every year. Envisioning Information is the better book once you've absorbed the first. Alberto Cairo's The Truthful Art is the modern complement — more data journalism, less design dogma."
+          "headingZh": "必读书目",
+          "body": "Edward Tufte's The Visual Display of Quantitative Information is the foundation. Dense, opinionated, and worth re-reading every year. Alberto Cairo's The Truthful Art is the modern complement — more data journalism, less design dogma.",
+          "bodyZh": "爱德华·塔夫特的《定量信息的视觉呈现》是基础读物，内容密集、观点鲜明，值得每年重读。阿尔贝托·凯罗的《真实的艺术》是现代补充读物，更侧重数据新闻，少一些设计教条。"
         },
         {
           "heading": "On craft",
-          "body": "Bret Victor's essays — Explorable Explanations, Magic Ink, Up and Down the Ladder of Abstraction — are the best writing on the future of interactive media I've found. Not about charts specifically, but about how software can augment understanding. His thinking shapes how I approach every interactive piece."
+          "headingZh": "关于设计技艺",
+          "body": "Bret Victor's essays — Explorable Explanations, Magic Ink, Up and Down the Ladder of Abstraction — are the best writing on the future of interactive media I've found. His thinking shapes how I approach every interactive piece.",
+          "bodyZh": "Bret Victor 的文章——《可探索的解释》《魔法墨水》《在抽象阶梯上下行》——是我读过的关于交互媒体未来的最佳文字。他的思考方式影响着我处理每一个交互作品的方式。"
         },
         {
           "heading": "On staying curious",
-          "body": "The Pudding's methodology posts are worth reading for how they approach novel dataset journalism. Information is Beautiful awards are a good annual calibration for what the field considers excellent. And following practitioners on GitHub — looking at how people actually structure their D3 code — teaches more than any book."
+          "headingZh": "保持好奇心",
+          "body": "The Pudding's methodology posts are worth reading for how they approach novel dataset journalism. Information is Beautiful awards are a good annual calibration for what the field considers excellent. And following practitioners on GitHub teaches more than any book.",
+          "bodyZh": "The Pudding 的方法论文章值得阅读，可以了解他们如何处理新颖的数据新闻。「信息之美」奖项是每年校准行业优秀标准的好参考。而在 GitHub 上关注实践者的代码，比任何书都教得多。"
         }
       ]
     },
     {
       "slug": "chart-annotations",
       "title": "A small grammar for chart annotations",
+      "titleZh": "图表注释的小语法",
       "excerpt": "Annotations are the second draft of a chart. Here's a tiny system for them.",
+      "excerptZh": "注释是图表的第二稿。这里是一套小系统。",
       "date": "Nov 22, 2025",
       "tags": ["Data-viz"],
       "readingTime": "5 min",
@@ -142,22 +192,30 @@
       "sections": [
         {
           "heading": "Why annotations matter",
-          "body": "A chart without annotations asks the reader to find the story. A chart with good annotations tells the story and shows the evidence. The annotation is the journalist; the chart is the source. Most charts I see in the wild are missing this layer entirely."
+          "headingZh": "注释为何重要",
+          "body": "A chart without annotations asks the reader to find the story. A chart with good annotations tells the story and shows the evidence. The annotation is the journalist; the chart is the source.",
+          "bodyZh": "没有注释的图表要读者自己去找故事；有好注释的图表既讲述故事又呈现证据。注释是记者，图表是信源。"
         },
         {
           "heading": "A minimal grammar",
-          "body": "I use three annotation types: callout (a label pointing at a specific data point), band (a highlighted region with a label, for time ranges or thresholds), and note (a text block explaining methodology or caveats, usually bottom-left). These cover 90% of cases."
+          "headingZh": "最小化语法",
+          "body": "I use three annotation types: callout (a label pointing at a specific data point), band (a highlighted region with a label, for time ranges or thresholds), and note (a text block for methodology caveats). These cover 90% of cases.",
+          "bodyZh": "我使用三种注释类型：标注（指向特定数据点的标签）、色带（带标签的高亮区域，用于时间段或阈值）、备注（用于说明方法论的文本块）。这三种覆盖了 90% 的场景。"
         },
         {
           "heading": "Implementation in D3",
-          "body": "I keep annotations as a separate data array in the same JSON as the chart data. Each annotation has a type, a position anchored to a data value, and label text. The renderer places them in a separate SVG layer above the chart, so they don't interfere with zoom or brush interactions. Separation of layers saves hours of debugging."
+          "headingZh": "D3 中的实现",
+          "body": "I keep annotations as a separate data array in the same JSON as the chart data. Each annotation has a type, a position anchored to a data value, and label text. The renderer places them in a separate SVG layer above the chart.",
+          "bodyZh": "我将注释作为独立数据数组存储在与图表数据相同的 JSON 中。每个注释有类型、锚定于数据值的位置以及标签文本。渲染器将其放置在图表上方独立的 SVG 层中。"
         }
       ]
     },
     {
       "slug": "research-intern-to-fullstack",
       "title": "From research intern to full-stack: a path",
+      "titleZh": "从研究实习生到全栈开发者：一条路径",
       "excerpt": "How a year at St Andrews became a frontend career — what I'd tell my younger self.",
+      "excerptZh": "在圣安德鲁斯大学的一年如何成就了前端职业——我想对年轻的自己说的话。",
       "date": "Oct 03, 2025",
       "tags": ["Career"],
       "readingTime": "9 min",
@@ -165,19 +223,27 @@
       "sections": [
         {
           "heading": "How it started",
-          "body": "I joined the School of Computer Science at St Andrews to maintain four existing web applications. The word 'maintain' understates it — the codebases were undocumented, the previous contributors had graduated, and two of the four apps were broken in production. It was the best possible introduction to real software engineering."
+          "headingZh": "起点",
+          "body": "I joined the School of Computer Science at St Andrews to maintain four existing web applications. The word 'maintain' understates it — the codebases were undocumented, the previous contributors had graduated, and two of the four apps were broken in production. It was the best possible introduction to real software engineering.",
+          "bodyZh": "我加入圣安德鲁斯大学计算机学院，负责维护四个现有 Web 应用。「维护」一词过于轻描淡写——代码库无文档，前任贡献者已毕业离校，四个应用中有两个在生产环境中已损坏。这是对真实软件工程最好的入门教育。"
         },
         {
           "heading": "What research taught me about software",
-          "body": "Academic software has a specific failure mode: it's built to publish, not to run. Features get added for papers, never refactored, and the person who understands any given function has usually moved to a different continent. Learning to read that kind of code — and to make it better without breaking what works — is a skill that transfers everywhere."
+          "headingZh": "研究工作教会我的软件认知",
+          "body": "Academic software has a specific failure mode: it's built to publish, not to run. Features get added for papers, never refactored, and the person who understands any given function has usually moved to a different continent. Learning to read that kind of code is a skill that transfers everywhere.",
+          "bodyZh": "学术软件有一种特定的失败模式：它是为发表论文而构建的，不是为了运行。功能为论文而添加，从不重构，而理解某个函数的人通常已经移居他乡。学会阅读这类代码是一种可以迁移到任何地方的技能。"
         },
         {
           "heading": "The jump to industry",
-          "body": "Saint-Gobain was a different world: actual users, actual deadlines, and actual consequences when things broke. The research internship had given me confidence with unfamiliar codebases and a habit of reading before writing. That turned out to be exactly what the role needed."
+          "headingZh": "跃入工业界",
+          "body": "Saint-Gobain was a different world: actual users, actual deadlines, and actual consequences when things broke. The research internship had given me confidence with unfamiliar codebases and a habit of reading before writing. That turned out to be exactly what the role needed.",
+          "bodyZh": "圣戈班是完全不同的世界：真实的用户、真实的截止日期、出问题时真实的后果。研究实习赋予了我面对陌生代码库的信心，以及先读后写的习惯。这恰好正是这份工作所需要的。"
         },
         {
           "heading": "What I'd tell my younger self",
-          "body": "Take the unglamorous project. The broken app nobody wants to touch, the legacy codebase the senior engineers avoid — that's where you learn the most, fastest. Greenfield projects teach you to build. Legacy projects teach you to think."
+          "headingZh": "给年轻自己的建议",
+          "body": "Take the unglamorous project. The broken app nobody wants to touch, the legacy codebase the senior engineers avoid — that's where you learn the most, fastest. Greenfield projects teach you to build. Legacy projects teach you to think.",
+          "bodyZh": "接下那个不光鲜的项目。那个没人愿意碰的烂摊子、高级工程师避而远之的遗留代码——那才是你学得最快、最多的地方。全新项目教你构建，遗留项目教你思考。"
         }
       ]
     }

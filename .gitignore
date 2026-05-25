@@ -20,3 +20,8 @@ out/
 Thumbs.db
 
 .idea/
+public/.DS_Store
+/.claude/worktrees
+public/.DS_Store
+*.zip
+public/.DS_Store

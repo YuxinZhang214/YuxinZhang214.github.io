@@ -11,10 +11,10 @@ const Experience: React.FC = () => {
           company={exp.company}
           role={exp.role}
           period={exp.period}
-          description={exp.description}
-          logo={exp.logo}
+          description={exp.desc}
+          logo={''}
           recognition={exp.recognition}
-          technologies={exp.technologies}
+          technologies={exp.tech}
         />
       ))}
     </div>

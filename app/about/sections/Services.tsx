@@ -9,9 +9,9 @@ const Services = () => {
           key={service.title}
           title={service.title}
           description={service.description}
-          icon={service.icon}
-          details={service.details}
-          caseStudy={service.caseStudy}
+          icon={''}
+          details={''}
+          caseStudy={''}
         />
       ))}
     </div>

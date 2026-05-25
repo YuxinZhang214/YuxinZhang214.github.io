@@ -3,17 +3,23 @@
     {
       "n": "01",
       "title": "Data Visualisation",
-      "description": "Develop customised data visualisation solutions that transform complex data into intuitive charts and dashboards, enabling businesses to identify trends quickly."
+      "titleZh": "数据可视化",
+      "description": "Develop customised data visualisation solutions that transform complex data into intuitive charts and dashboards, enabling businesses to identify trends quickly.",
+      "descriptionZh": "开发定制化数据可视化方案，将复杂数据转化为直观的图表与仪表盘，帮助企业快速洞察趋势。"
     },
     {
       "n": "02",
       "title": "Low-Code Platform",
-      "description": "Develop low-code platforms that accelerate application development, reduce costs, and enhance business agility."
+      "titleZh": "低代码平台",
+      "description": "Develop low-code platforms that accelerate application development, reduce costs, and enhance business agility.",
+      "descriptionZh": "开发低代码平台，加速应用交付，降低开发成本，增强业务灵活性。"
     },
     {
       "n": "03",
       "title": "Digital Transformation",
-      "description": "Leverage front-end technologies to modernise business processes, improve UX, and enhance operational efficiency."
+      "titleZh": "数字化转型",
+      "description": "Leverage front-end technologies to modernise business processes, improve UX, and enhance operational efficiency.",
+      "descriptionZh": "运用前端技术推动业务流程现代化，提升用户体验，提高运营效率。"
     }
   ]
 }

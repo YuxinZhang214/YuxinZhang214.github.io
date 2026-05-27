@@ -103,13 +103,10 @@ export default function AboutMe() {
         </div>
         <div className="yz-timeline">
           {educationContent.education.map((edu, i) => (
-            <div key={i} className={`yz-tl-item${edu.current ? ' current' : ''}`}>
+            <div key={i} className="yz-tl-item">
               <div>
                 <div className="yz-tl-period">
                   {edu.period}
-                  {edu.current && (
-                    <span className="yz-tl-current-marker">● {t('Current', '在读')}</span>
-                  )}
                 </div>
                 <div className="yz-tl-company">{edu.school}</div>
                 <div className="yz-tl-role">{t(edu.degree, edu.degreeZh)}</div>

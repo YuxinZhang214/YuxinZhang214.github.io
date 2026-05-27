@@ -4,60 +4,60 @@
     {
       "label": "Building",
       "labelZh": "开发中",
-      "value": "A D3 component library for ops dashboards",
-      "valueZh": "为运营仪表盘构建 D3 组件库",
-      "sub": "Iterating on chart primitives",
-      "subZh": "持续迭代图表基础组件"
+      "value": "ML applications & infrastructure for power trading",
+      "valueZh": "面向电力交易的机器学习应用与基础设施",
+      "sub": "At Tsingroc AI",
+      "subZh": "Tsingroc AI"
     },
     {
       "label": "Reading",
       "labelZh": "阅读中",
-      "value": "\"The Visual Display of Quantitative Information\"",
-      "valueZh": "《定量信息的视觉呈现》",
-      "sub": "Edward Tufte · 2nd ed.",
-      "subZh": "爱德华·塔夫特 · 第二版"
+      "value": "\"Understanding and Changing the World\" — Joseph Sifakis",
+      "valueZh": "《理解和改变世界》——约瑟夫·希发基思",
+      "sub": "From Information to Knowledge and Intelligence",
+      "subZh": "从信息到知识与智能"
     },
     {
       "label": "Learning",
       "labelZh": "学习中",
-      "value": "WebGL & Three.js for 3D viz",
-      "valueZh": "WebGL 与 Three.js 三维可视化",
-      "sub": "Side-project: globe of monuments",
-      "subZh": "个人项目：古迹地球仪"
+      "value": "Graph Neural Networks (GNN)",
+      "valueZh": "图神经网络（GNN）",
+      "sub": "Side project: spectral graph theory & message passing from scratch",
+      "subZh": "个人项目：从零推导谱图理论与消息传递机制"
     }
   ],
   "aboutCards": [
     {
       "label": "Working",
       "labelZh": "工作",
-      "value": "Building a D3 component library for Saint-Gobain ops dashboards.",
-      "valueZh": "为圣戈班运营仪表盘构建 D3 组件库。",
-      "sub": "Iterating on chart primitives & a streaming data layer.",
-      "subZh": "持续迭代图表基础组件与流式数据层。"
+      "value": "Building ML applications & infrastructure for power trading.",
+      "valueZh": "构建面向电力交易的机器学习应用与基础设施。",
+      "sub": "Tsingroc AI",
+      "subZh": "Tsingroc AI"
     },
     {
       "label": "Reading",
       "labelZh": "阅读",
-      "value": "\"The Visual Display of Quantitative Information\" — Tufte.",
-      "valueZh": "《定量信息的视觉呈现》——塔夫特。",
-      "sub": "Plus catching up on Bret Victor's old essays.",
-      "subZh": "同时补读 Bret Victor 的旧文章。"
+      "value": "\"Understanding and Changing the World\" — Joseph Sifakis.",
+      "valueZh": "《理解和改变世界》——约瑟夫·希发基思。",
+      "sub": "From Information to Knowledge and Intelligence.",
+      "subZh": "从信息到知识与智能。"
     },
     {
       "label": "Learning",
       "labelZh": "学习",
-      "value": "WebGL & Three.js for 3D data visualization.",
-      "valueZh": "WebGL 与 Three.js 三维数据可视化。",
-      "sub": "Side project: a globe of UK monuments.",
-      "subZh": "个人项目：英国古迹地球仪。"
+      "value": "Graph Neural Networks (GNN).",
+      "valueZh": "图神经网络（GNN）。",
+      "sub": "Side project: spectral graph theory & message passing from scratch.",
+      "subZh": "个人项目：从零推导谱图理论与消息传递机制。"
     },
     {
       "label": "Looking for",
-      "labelZh": "寻求",
-      "value": "Frontend / full-stack roles in dataviz & platforms.",
-      "valueZh": "数据可视化与平台方向的前端/全栈职位。",
-      "sub": "Open to remote, EU, or Shanghai-based.",
-      "subZh": "接受远程、欧洲或上海的岗位。"
+      "labelZh": "期待",
+      "value": "Interesting discussions on the mathematical foundations of ML.",
+      "valueZh": "关于机器学习数学基础的有趣探讨。",
+      "sub": "Graph theory, optimization, probability — all welcome.",
+      "subZh": "图论、优化、概率论，皆欢迎。"
     }
   ]
 }

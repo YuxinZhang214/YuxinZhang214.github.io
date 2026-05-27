@@ -1,8 +1,19 @@
 {
   "experiences": [
     {
-      "period": "Jul 2024 — Nov 2024",
+      "period": "2025 — Present",
       "current": true,
+      "company": "Tsingroc AI",
+      "role": "Software Engineer",
+      "roleZh": "软件工程师",
+      "recognition": "AI Startup · Founded by Tsinghua Alumni · Beijing",
+      "recognitionZh": "AI 初创公司 · 清华校友创立 · 北京",
+      "desc": "Building AI-driven products at an early-stage startup, working across full-stack and ML systems.",
+      "descZh": "在早期 AI 初创公司构建 AI 驱动产品，涵盖全栈与机器学习系统。",
+      "tech": ["Python", "AI/ML", "Full-stack"]
+    },
+    {
+      "period": "Jul 2024 — Nov 2024",
       "company": "Saint-Gobain Research (Shanghai)",
       "role": "Frontend Development, Research Engineer",
       "roleZh": "前端开发，研究工程师",

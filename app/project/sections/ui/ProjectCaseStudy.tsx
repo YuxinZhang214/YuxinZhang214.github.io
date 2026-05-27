@@ -33,7 +33,7 @@ export default function ProjectCaseStudy({
     <>
       <section className="yz-detail-hero">
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <a href="/project" className="yz-mono" style={{ color: 'var(--fg-3)' }}>← {t('Projects', '项目')}</a>
+          <a href="/project" className="yz-back-link">← {t('Projects', '项目')}</a>
           <span className="yz-mono" style={{ color: 'var(--fg-3)' }}>/</span>
           <span className="yz-mono" style={{ color: 'var(--fg-2)' }}>{title}</span>
         </div>

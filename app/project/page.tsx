@@ -61,7 +61,7 @@ export default function ProjectsPage() {
                       alt={p.title}
                       width={800}
                       height={500}
-                      style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 'var(--radius)' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     />
                   ) : (
                     <div className="yz-proj-media-placeholder">{p.title}</div>

@@ -17,7 +17,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       {/* Header */}
       <div className="yz-post-hero">
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-          <a href="/blog" className="yz-mono" style={{ color: 'var(--fg-3)' }}>← {t('Blog', '博客')}</a>
+          <a href="/blog" className="yz-back-link">← {t('Blog', '博客')}</a>
           <span className="yz-mono" style={{ color: 'var(--fg-3)' }}>/</span>
           <span className="yz-mono" style={{ color: 'var(--fg-2)' }}>{post.tags[0]}</span>
         </div>
@@ -28,7 +28,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <span>·</span>
           <span>{post.readingTime} {t('read', '分钟')}</span>
           <span>·</span>
-          <span>{t('Yuxin Zhang', '张宇欣')}</span>
+          <span>{t('Yuxin Zhang', '张钰欣')}</span>
         </div>
       </div>
 
@@ -105,19 +105,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </aside>
       </div>
 
-      {/* Comments */}
-      <section className="yz-comments">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
-          <h3 className="yz-h3">{t('Comments', '评论')}</h3>
-          <span className="yz-mono">{t('Sign in to comment', '登录后评论')}</span>
-        </div>
-        <form className="yz-comment-form" onSubmit={(e) => e.preventDefault()}>
-          <textarea className="yz-comment-input" placeholder={t('Add to the discussion…', '加入讨论…')} />
-          <button className="yz-comment-submit" type="submit">{t('Post comment', '发表评论')}</button>
-        </form>
-      </section>
-
-      {/* Nav */}
+{/* Nav */}
       <div className="yz-detail-nav">
         <a href="/blog">
           <span className="nav-label">← {t('All posts', '所有文章')}</span>

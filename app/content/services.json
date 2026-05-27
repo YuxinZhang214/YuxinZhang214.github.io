@@ -9,17 +9,17 @@
     },
     {
       "n": "02",
-      "title": "Low-Code Platform",
-      "titleZh": "低代码平台",
-      "description": "Develop low-code platforms that accelerate application development, reduce costs, and enhance business agility.",
-      "descriptionZh": "开发低代码平台，加速应用交付，降低开发成本，增强业务灵活性。"
+      "title": "ML Systems & Infrastructure",
+      "titleZh": "机器学习系统与基础设施",
+      "description": "Build platforms and infrastructure that bring ML models into production — reliable, scalable, and built for real-world applications.",
+      "descriptionZh": "构建将机器学习模型落地生产的平台与基础设施，稳定、可扩展，面向真实应用场景。"
     },
     {
       "n": "03",
       "title": "Digital Transformation",
       "titleZh": "数字化转型",
-      "description": "Leverage front-end technologies to modernise business processes, improve UX, and enhance operational efficiency.",
-      "descriptionZh": "运用前端技术推动业务流程现代化，提升用户体验，提高运营效率。"
+      "description": "End-to-end project delivery across the full stack — streamlining business operations and procedures through well-engineered tools, from frontend and backend to data pipelines and deployment.",
+      "descriptionZh": "全栈端到端项目交付——通过精心设计的工具优化业务运营流程，涵盖前端、后端、数据管道与部署。"
     }
   ]
 }

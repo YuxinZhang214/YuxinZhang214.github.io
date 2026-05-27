@@ -44,23 +44,13 @@ export default function Header() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <button
             onClick={() => setLang(lang === 'en' ? 'zh' : 'en')}
-            style={{
-              padding: '8px 16px',
-              border: '1.5px solid var(--fg)',
-              borderRadius: 999,
-              fontSize: 13,
-              fontWeight: 500,
-              letterSpacing: '0.04em',
-              background: 'transparent',
-              color: 'var(--fg)',
-              cursor: 'pointer',
-              transition: 'background 0.2s, color 0.2s',
-              fontFamily: 'var(--font-body)',
-            }}
-            onMouseEnter={e => { (e.target as HTMLElement).style.background = 'var(--fg)'; (e.target as HTMLElement).style.color = 'var(--bg)'; }}
-            onMouseLeave={e => { (e.target as HTMLElement).style.background = 'transparent'; (e.target as HTMLElement).style.color = 'var(--fg)'; }}
+            className="yz-lang-toggle"
             aria-label="Toggle language"
           >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
             {lang === 'en' ? '中文' : 'EN'}
           </button>
 

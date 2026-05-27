@@ -21,7 +21,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ title,description,url,cov
 
       {/* <- Back Button */}
       <div className="mb-4">
-          <Link href="/" passHref className="px-4 py-2 rounded-full text-black
+          <Link href="/project" passHref className="px-4 py-2 rounded-full text-black
                        hover:bg-black hover:text-white transition-colors duration-300">
               <span className="mr-2 text-xl">← Go Back </span> 
           </Link>

@@ -1,0 +1,22 @@
+{
+  "name": "Yuxin",
+  "email": "yuxin.zhang.project@outlook.com",
+  "nav": [
+    { "text": "Home", "href": "/" },
+    { "text": "Project", "href": "/project" },
+    { "text": "Blog", "href": "/blog" },
+    { "text": "About me", "href": "/about" }
+  ],
+  "footerNav": [
+    { "text": "Home", "href": "/" },
+    { "text": "Skills", "href": "/#skills-section" },
+    { "text": "Service", "href": "/#services-section" },
+    { "text": "Experience", "href": "/#experience-section" },
+    { "text": "Projects", "href": "/#projects-section" }
+  ],
+  "social": [
+    { "platform": "github", "href": "https://github.com/YuxinZhang214" },
+    { "platform": "linkedin", "href": "https://www.linkedin.com/in/yuxinzhang214/" }
+  ],
+  "copyright": "© 2026 Yuxin Zhang. All rights reserved."
+}

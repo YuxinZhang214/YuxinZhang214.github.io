@@ -1,0 +1,25 @@
+{
+  "services": [
+    {
+      "n": "01",
+      "title": "Data Visualisation",
+      "titleZh": "数据可视化",
+      "description": "Develop customised data visualisation solutions that transform complex data into intuitive charts and dashboards, enabling businesses to identify trends quickly.",
+      "descriptionZh": "开发定制化数据可视化方案，将复杂数据转化为直观的图表与仪表盘，帮助企业快速洞察趋势。"
+    },
+    {
+      "n": "02",
+      "title": "ML Systems & Infrastructure",
+      "titleZh": "机器学习系统与基础设施",
+      "description": "Build platforms and infrastructure that bring ML models into production — reliable, scalable, and built for real-world applications.",
+      "descriptionZh": "构建将机器学习模型落地生产的平台与基础设施，稳定、可扩展，面向真实应用场景。"
+    },
+    {
+      "n": "03",
+      "title": "Digital Transformation",
+      "titleZh": "数字化转型",
+      "description": "End-to-end project delivery across the full stack — streamlining business operations and procedures through well-engineered tools, from frontend and backend to data pipelines and deployment.",
+      "descriptionZh": "全栈端到端项目交付——通过精心设计的工具优化业务运营流程，涵盖前端、后端、数据管道与部署。"
+    }
+  ]
+}

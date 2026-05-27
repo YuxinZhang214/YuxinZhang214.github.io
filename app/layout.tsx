@@ -1,10 +1,11 @@
 import '../styles/globals.css';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
+import { LanguageProvider } from './context/LanguageContext';
 
 export const metadata = {
   title: 'Yuxin Zhang',
-  description: 'Yuxin Zhang\'s website',
+  description: 'Yuxin Zhang\'s personal website — Software Engineer, AI/ML & Data Visualization',
 };
 
 export default function RootLayout({
@@ -14,27 +15,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
       <head>
         <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
       </head>
-
-      <body className="min-h-screen flex flex-col font-satoshi">
-
-        {/* Header */}
-        <div id='header' className='px-6 sm:px-12 md:px-16 lg:px-24 py-4 sm:py-6 lg:py-8'>
+      <body style={{ background: 'var(--bg)', color: 'var(--fg)' }}>
+        <LanguageProvider>
           <Header />
-        </div>
-
-        {/* Content */}
-        <main className="flex-grow px-6 sm:px-12 md:px-16 lg:px-24 w-full">
-          {children}
-        </main>
-
-        <div id='footer' className='px-6 sm:px-12 md:px-16 lg:px-24 py-4 sm:py-6 lg:py-8'>
+          <main
+            style={{
+              maxWidth: 'var(--maxw)',
+              margin: '0 auto',
+              padding: '0 var(--pad-x)',
+            }}
+          >
+            {children}
+          </main>
           <Footer />
-        </div>
-
+        </LanguageProvider>
       </body>
     </html>
   );

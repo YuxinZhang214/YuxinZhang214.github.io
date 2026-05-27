@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "slug": "my-first-blog",
+      "title": "My First Blog",
+      "titleZh": "我的第一篇博客",
+      "excerpt": "Coming soon.",
+      "excerptZh": "即将更新。",
+      "date": "May 27, 2026",
+      "tags": ["Notes"],
+      "readingTime": "— min",
+      "featured": true,
+      "sections": [
+        {
+          "heading": "Coming soon",
+          "headingZh": "即将更新",
+          "body": "Blog coming soon.",
+          "bodyZh": "博客即将更新。"
+        }
+      ]
+    }
+  ]
+}

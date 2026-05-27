@@ -1,36 +1,68 @@
-const Header = () => {
+'use client';
+
+import { usePathname } from 'next/navigation';
+import site from '../content/site.json';
+import { useLanguage } from '../context/LanguageContext';
+
+export default function Header() {
+  const pathname = usePathname();
+  const { lang, setLang } = useLanguage();
+
+  const activeId = (href: string) => {
+    if (href === '/' && pathname === '/') return true;
+    if (href !== '/' && pathname.startsWith(href)) return true;
+    return false;
+  };
+
+  const navLabels: Record<string, string> = {
+    '/':       lang === 'zh' ? '主页'   : 'Home',
+    '/project': lang === 'zh' ? '项目'   : 'Project',
+    '/blog':   lang === 'zh' ? '博客'   : 'Blog',
+    '/about':  lang === 'zh' ? '关于我' : 'About me',
+  };
+
   return (
-    <header className="py-4 md:py-8 font-satoshi-regular">
-      <div className="container mx-auto flex justify-between items-center">
-        
-        {/* Logo / Name */}
-        <div className="text-3xl font-bold">Yuxin</div>
-        
-        {/* Navigation Links */}
-        <div className="hidden md:flex space-x-8 ">
-          <a href="#" className="hover:underline transition-colors">Home</a>
-          <a href="#skills-section" className="hover:underline transition-colors">Skills</a>
-          <a href="#services-section" className="hover:underline transition-colors">Services</a>
-          <a href="#experience-section" className="hover:underline transition-colors">Experience</a>
-          <a href="#projects-section" className="hover:underline transition-colors">Projects</a>
-        </div>
-        
-        {/* Contact Button */}
-        <div>
-          <a 
-            href="mailto:yuxin.zhang.project@outlook.com" 
-            className="inline-block px-6 py-2 rounded-full border-2 border-black
-                       hover:bg-black hover:text-white transition-colors duration-300"
+    <header className="yz-header">
+      <div className="yz-header-inner">
+        <a href="/" className="yz-logo">
+          <span>{site.name}</span>
+          <span className="yz-logo-dot" />
+        </a>
+
+        <nav className="yz-nav">
+          {site.nav.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={`yz-nav-link${activeId(item.href) ? ' is-active' : ''}`}
+            >
+              {navLabels[item.href] ?? item.text}
+            </a>
+          ))}
+        </nav>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <button
+            onClick={() => setLang(lang === 'en' ? 'zh' : 'en')}
+            className="yz-lang-toggle"
+            aria-label="Toggle language"
           >
-            Contact
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            {lang === 'en' ? '中文' : 'EN'}
+          </button>
+
+          <a href={`mailto:${site.email}`} className="yz-contact">
+            <span>{lang === 'zh' ? '联系我' : 'Contact'}</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </a>
         </div>
       </div>
-
-      <div className="border-t border-white-700 my-4"></div>
-      
+      <div className="yz-header-rule" />
     </header>
   );
-};
-
-export default Header;
+}

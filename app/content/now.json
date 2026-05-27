@@ -1,0 +1,63 @@
+{
+  "updatedAt": "Apr 2026",
+  "homeItems": [
+    {
+      "label": "Building",
+      "labelZh": "开发中",
+      "value": "ML applications & infrastructure for power trading",
+      "valueZh": "面向电力交易的机器学习应用与基础设施",
+      "sub": "At Tsingroc AI",
+      "subZh": "Tsingroc AI"
+    },
+    {
+      "label": "Reading",
+      "labelZh": "阅读中",
+      "value": "\"Understanding and Changing the World\" — Joseph Sifakis",
+      "valueZh": "《理解和改变世界》——约瑟夫·希发基思",
+      "sub": "From Information to Knowledge and Intelligence",
+      "subZh": "从信息到知识与智能"
+    },
+    {
+      "label": "Learning",
+      "labelZh": "学习中",
+      "value": "Graph Neural Networks (GNN)",
+      "valueZh": "图神经网络（GNN）",
+      "sub": "Side project: spectral graph theory & message passing from scratch",
+      "subZh": "个人项目：从零推导谱图理论与消息传递机制"
+    }
+  ],
+  "aboutCards": [
+    {
+      "label": "Working",
+      "labelZh": "工作",
+      "value": "Building ML applications & infrastructure for power trading.",
+      "valueZh": "构建面向电力交易的机器学习应用与基础设施。",
+      "sub": "Tsingroc AI",
+      "subZh": "Tsingroc AI"
+    },
+    {
+      "label": "Reading",
+      "labelZh": "阅读",
+      "value": "\"Understanding and Changing the World\" — Joseph Sifakis.",
+      "valueZh": "《理解和改变世界》——约瑟夫·希发基思。",
+      "sub": "From Information to Knowledge and Intelligence.",
+      "subZh": "从信息到知识与智能。"
+    },
+    {
+      "label": "Learning",
+      "labelZh": "学习",
+      "value": "Graph Neural Networks (GNN).",
+      "valueZh": "图神经网络（GNN）。",
+      "sub": "Side project: spectral graph theory & message passing from scratch.",
+      "subZh": "个人项目：从零推导谱图理论与消息传递机制。"
+    },
+    {
+      "label": "Looking for",
+      "labelZh": "期待",
+      "value": "Interesting discussions on the mathematical foundations of ML.",
+      "valueZh": "关于机器学习数学基础的有趣探讨。",
+      "sub": "Graph theory, optimization, probability — all welcome.",
+      "subZh": "图论、优化、概率论，皆欢迎。"
+    }
+  ]
+}

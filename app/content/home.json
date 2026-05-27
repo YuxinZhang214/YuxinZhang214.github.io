@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "Frontend Engineer",
+    "titleZh": "软件工程师",
+    "intro": {
+      "name": "Yuxin Zhang",
+      "nameZh": "张钰欣",
+      "text": "a Software Engineer working across AI/ML and full-stack, based in Beijing with 2 years of industry experience, specialising in data visualisation and AI/ML systems.",
+      "textZh": "一位专注于 AI/ML 与全栈开发的软件工程师，现居北京，拥有两年工业经验，专注于数据可视化与 AI/ML 系统。"
+    },
+    "body": "I'm passionate about building platforms that bring AI/ML to real-world applications. My work spans full-stack engineering, ML system integration, and developer tooling — with a focus on making intelligent systems accessible, reliable, and production-ready.",
+    "bodyZh": "我热衷于构建将 AI/ML 落地于实际应用的平台。我的工作涵盖全栈工程、ML 系统集成与开发者工具，专注于让智能系统更易用、更可靠、更具生产可用性。"
+  },
+  "cta": [
+    { "text": "See my projects", "textZh": "查看我的项目", "href": "/project" },
+    { "text": "See my blog posts", "textZh": "阅读我的博客", "href": "/blog" },
+    { "text": "Know more about my experience", "textZh": "了解我的经历", "href": "/about" }
+  ]
+}

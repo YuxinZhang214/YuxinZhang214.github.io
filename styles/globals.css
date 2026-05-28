@@ -428,7 +428,7 @@ button { font: inherit; cursor: pointer; }
 .yz-hero-bio { display: flex; flex-direction: column; gap: 18px; padding-top: clamp(48px, 7vw, 96px); padding-bottom: 8px; }
 .yz-hero-meta {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   border-top: 1px solid var(--fg);
   padding-top: 20px;

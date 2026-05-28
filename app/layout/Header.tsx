@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import site from '../content/site.json';
 import { useLanguage } from '../context/LanguageContext';
@@ -7,6 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 export default function Header() {
   const pathname = usePathname();
   const { lang, setLang } = useLanguage();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const activeId = (href: string) => {
     if (href === '/' && pathname === '/') return true;
@@ -15,10 +17,10 @@ export default function Header() {
   };
 
   const navLabels: Record<string, string> = {
-    '/':       lang === 'zh' ? '主页'   : 'Home',
+    '/':        lang === 'zh' ? '主页'   : 'Home',
     '/project': lang === 'zh' ? '项目'   : 'Project',
-    '/blog':   lang === 'zh' ? '博客'   : 'Blog',
-    '/about':  lang === 'zh' ? '关于我' : 'About me',
+    '/blog':    lang === 'zh' ? '博客'   : 'Blog',
+    '/about':   lang === 'zh' ? '关于我' : 'About me',
   };
 
   return (
@@ -29,19 +31,20 @@ export default function Header() {
           <span className="yz-logo-dot" />
         </a>
 
-        <nav className="yz-nav">
+        <nav className={`yz-nav${menuOpen ? ' is-open' : ''}`}>
           {site.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
               className={`yz-nav-link${activeId(item.href) ? ' is-active' : ''}`}
+              onClick={() => setMenuOpen(false)}
             >
               {navLabels[item.href] ?? item.text}
             </a>
           ))}
         </nav>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div className="yz-header-actions">
           <button
             onClick={() => setLang(lang === 'en' ? 'zh' : 'en')}
             className="yz-lang-toggle"
@@ -60,6 +63,23 @@ export default function Header() {
               <path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
+
+          <button
+            className="yz-menu-btn"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M18 6L6 18M6 6l12 12"/>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            )}
+          </button>
         </div>
       </div>
       <div className="yz-header-rule" />

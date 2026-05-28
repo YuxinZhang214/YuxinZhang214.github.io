@@ -62,10 +62,6 @@ export default function Home() {
             <div className="label">{t('Currently', '目前就职')}</div>
             <div className="value">{t('Tsingroc AI', '清鹏 AI')}</div>
           </div>
-          <div className="yz-hero-meta-item">
-            <div className="label">{t('Status', '状态')}</div>
-            <div className="value" style={{ color: 'var(--fg-3)' }}>● {t('Not available', '暂不开放')}</div>
-          </div>
         </div>
       </section>
 
